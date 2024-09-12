@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.geologica {
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
+}
+
+@font-face {
+  font-family: "CoFo Sans";
+  src: local("CoFo Sans Bold"), local("CoFoSans-Bold"),
+    url("../font/CoFoSans-Bold.woff2") format("woff2"),
+    url("../font/CoFoSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CoFo Sans";
+  src: local("CoFo Sans"), local("CoFoSans-Regular"),
+    url("../font/CoFoSans-Regular.woff2") format("woff2"),
+    url("../font/CoFoSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CoFo Sans";
+  src: local("CoFo Sans Medium"), local("CoFoSans-Medium"),
+    url("../font/CoFoSans-Medium.woff2") format("woff2"),
+    url("../font/CoFoSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}

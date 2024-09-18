@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #1f1f1d;
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -44,6 +48,26 @@ a {
   margin: 0 auto;
 }
 
+.btn-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  padding: 20px;
+  /* background: linear-gradient(90deg, #1da9f7 0%, #0b72d1 100%); */
+  background: linear-gradient(to left, #0b72d1, transparent 50%);
+  background-color: #1da9f7;
+  box-shadow: 0px 10px 20px 0px #0000001a;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-blue:hover {
+  background-color: #0b72d1;
+}
+
 /* 
 'Inter', 
   regular,+
@@ -66,3 +90,9 @@ a {
   Medium
   Regular
 */
+
+@media (max-width: 520px) {
+  .btn-blue {
+    font-size: 16px;
+  }
+}

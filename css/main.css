@@ -285,10 +285,6 @@
   font-weight: 300;
   font-size: 60px;
   color: #2c2c2c;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
 }
 
 .view__title .color {
@@ -736,7 +732,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   margin-bottom: 16px;
   font-size: 75px;
   font-weight: 300;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   line-height: 60px;
   color: #1f1f1d;
 }
@@ -938,7 +933,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .service__title {
   margin-bottom: 45px;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   font-size: 75px;
   font-weight: 400;
   color: #1f1f1d;
@@ -1033,7 +1027,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   font-size: 40px;
   line-height: 38px;
   margin-bottom: 10px;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
 }
 
 .work__desc-place {
@@ -1201,7 +1194,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .feedback-left__title {
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   color: #0074b6;
   font-size: 29px;
   line-height: 34px;
@@ -1420,7 +1412,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   font-size: 75px;
   line-height: 70px;
   font-weight: 300;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
 }
 
 .report__title span {
@@ -1442,6 +1433,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   top: 22px;
   width: 13%;
   height: 109%;
+  z-index: -1;
   background: url("../img/line-icon.png") no-repeat center center / contain;
 }
 
@@ -1511,15 +1503,15 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .start__title {
-  font-size: 65px;
-  line-height: 60px;
   margin-bottom: 50px;
+  font-size: 65px;
+  font-weight: 300;
+  line-height: 60px;
 }
 
 .start__list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  flex-direction: row;
   gap: 20px;
 }
 
@@ -1582,7 +1574,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .start__subtitle {
   margin-bottom: 14px;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 37px;
   line-height: 40px;
@@ -1714,7 +1705,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   font-size: 55px;
   line-height: 55px;
   font-weight: 300;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
 }
 
 .ask__title span {
@@ -1739,6 +1729,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   position: relative;
   max-width: 240px;
   font-size: 18px;
+  font-weight: 500;
   line-height: 24px;
 }
 
@@ -1826,9 +1817,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   padding: 20px 48px;
 }
 
-.ask__subtitle {
-}
-
 .ask__label {
   width: 100%;
 }
@@ -1874,7 +1862,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .order__title {
   margin-bottom: 18px;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   font-size: 55px;
   font-weight: 300;
   line-height: 55px;
@@ -1924,7 +1911,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   margin-bottom: 45px;
   font-size: 75px;
   font-weight: 300;
-  font-family: "Geologica", Arial, Helvetica, sans-serif;
   line-height: 60px;
 }
 

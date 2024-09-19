@@ -341,13 +341,72 @@
             <p><span>1000</span> проектов</p>
           </div>
         </div>
+        <div class="header--mobile">
+          <div class="header-wrapp--mobile">
+            <img class='header-logo--mobile' src="img/logo-img.png" alt="логотип компании АнгарСтрой" />
+            <button class="burger">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+          <nav id="burgerMenu" class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#calcul" class="nav__link">Калькулятор</a>
+              </li>
+              <li class="nav__item">
+                <a href="#type" class="nav__link">Типы ангаров</a>
+              </li>
+              <li class="nav__item">
+                <a href="#guarantee" class="nav__link">Гарантии</a>
+              </li>
+              <li class="nav__item">
+                <a href="#work" class="nav__link">Наши работы</a>
+              </li>
+              <li class="nav__item">
+                <a href="#report" class="nav__link">Отчетность</a>
+              </li>
+              <li class="nav__item">
+                <a href="#question" class="nav__link">Вопросы</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contact" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
+
+      <aside class="side-menu menu-opened" id="sideMenu">
+        <button class="menu-close-btn" id="menuCloseBtn"></button>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <div class="svg-wrapp"></div>
+            <p class="menu-text">Оставить заявку</p>
+          </li>
+          <li class="menu-item">
+            <div class="svg-wrapp"></div>
+            <p class="menu-text">Рассчитать стоимость</p>
+          </li>
+          <li class="menu-item">
+            <div class="svg-wrapp"></div>
+            <p class="menu-text">Экскурсия по&nbsp;объектам</p>
+          </li>
+          <li class="menu-item">
+            <div class="svg-wrapp"></div>
+            <p class="menu-text">Написать в&nbsp;WhatsApp</p>
+          </li>
+          <li class="menu-item">
+            <div class="svg-wrapp"></div>
+            <p class="menu-text">Написать в&nbsp;Telegram</p>
+          </li>
+        </ul>
+      </aside>
     </header>
     <main>
       <section class="view">
         <div class="container view__container">
           <div class="view__body--mobile">
-            <h1 class="view__title">
+            <h1 class="view__title geologica">
               Построим ангар
               <span class="color">за&nbsp;30&nbsp;дней</span> в&nbsp;<span
                 class="wrap"
@@ -712,7 +771,7 @@
               />
             </div>
             <div class="form__right">
-              <h3 class="calc__heading">Рассчитать стоимость</h3>
+              <h3 class="calc__heading geologica">Рассчитать стоимость</h3>
               <p class="calc__text">
                 Бесплатно приедем к&nbsp;вам на&nbsp;объект сделаем точный замер
                 и&nbsp;предложим лучшие варианты постройки
@@ -768,7 +827,7 @@
       <section class="about">
         <ul class="container about__container-list">
           <li class="about__item">
-            <h2 class="about__title">У&nbsp;нас нет ограничений</h2>
+            <h2 class="about__title geologica">У&nbsp;нас нет ограничений</h2>
             <p class="about__desc">
               Cтроительство ангаров от&nbsp;классической арочной до&nbsp;любых
               других типов конструкций по&nbsp;желанию заказчика&nbsp;&mdash;
@@ -818,7 +877,7 @@
             </ul>
           </li>
           <li class="about__item service">
-            <h2 class="service__title">
+            <h2 class="service__title geologica">
               Вы&nbsp;<span>можете нам довериться</span>
               и&nbsp;быть&nbsp;спокойны за&nbsp;качество и&nbsp;сроки
             </h2>
@@ -1300,10 +1359,12 @@
             </div>
           </li>
           <li class="about__item">
-            <h2 class="about__title">Наши работы</h2>
+            <h2 class="about__title geologica">Наши работы</h2>
             <ul class="work__wrapp">
               <li class="work__wrapp-left">
-                <h3 class="work__title">Ангар из&nbsp;сэндвич панелей</h3>
+                <h3 class="work__title geologica">
+                  Ангар из&nbsp;сэндвич панелей
+                </h3>
                 <p class="work__desc-place">с. Немчиновка, Московская обл.</p>
                 <div class="work__inner">
                   <p class="work__inner-text">
@@ -1359,10 +1420,10 @@
       <section class="feedback">
         <ul class="container feedback__container">
           <li class="feedback__left">
-            <h2 class="feedback-left__title">
+            <h3 class="feedback-left__title geologica">
               Запишитесь на&nbsp;бесплатную экскурсию по&nbsp;готовым или
               строящимся ангарам
-            </h2>
+            </h3>
             <p class="feedback-left__text">
               Закроем все возражения и&nbsp;вопросы, все обьясним и&nbsp;покажем
               на&nbsp;одной встрече
@@ -1383,10 +1444,10 @@
           </li>
           <div class="feedback__wrapp-img"></div>
           <li class="feedback__right">
-            <h2 class="feedback-right__title">
+            <h3 class="feedback-right__title geologica">
               Оставьте только Номер телефона и&nbsp;мы&nbsp;согласуем дату для
               экскурсии
-            </h2>
+            </h3>
             <select
               class="feedback-right__select"
               name="social"
@@ -1431,7 +1492,7 @@
       </section>
       <section class="benefit">
         <div class="benefit__container container">
-          <h2 class="benefit__title">
+          <h2 class="benefit__title geologica">
             Вы&nbsp;получаете полностью <span>готовый ангар</span>
           </h2>
           <ul class="benefit__list">
@@ -1653,7 +1714,7 @@
       </section>
       <section class="report">
         <div class="report__container container">
-          <h2 class="report__title">
+          <h2 class="report__title geologica">
             Предоставляем полную <span>отчетность</span> о&nbsp;ходе работ
           </h2>
           <ul class="report__list">
@@ -1699,11 +1760,13 @@
       </section>
       <section class="start">
         <div class="start__container container">
-          <h2 class="start__title">Как начать работу с&nbsp;нами</h2>
+          <h2 class="start__title geologica">Как начать работу с&nbsp;нами</h2>
           <ul class="start__list">
             <li class="start__item">
               <div class="span-wrapp"><span>1</span><span>шаг</span></div>
-              <h3 class="start__subtitle">Позвоните или оставьте заявку</h3>
+              <h3 class="start__subtitle geologica">
+                Позвоните или оставьте заявку
+              </h3>
               <p class="start__desc">Позвоните нам:</p>
               <a class="start__link" href="tel:+79786902415"
                 >+7 (978) 690-24-15</a
@@ -1734,7 +1797,7 @@
             </li>
             <li class="start__item">
               <div class="span-wrapp"><span>2</span><span>шаг</span></div>
-              <h3 class="start__subtitle">
+              <h3 class="start__subtitle geologica">
                 Обсудим вашу задачу. Наметим план. Заключим договор.
               </h3>
               <p class="start__desc">
@@ -1744,7 +1807,9 @@
             </li>
             <li class="start__item">
               <div class="span-wrapp"><span>3</span><span>шаг</span></div>
-              <h3 class="start__subtitle">Приступаем к&nbsp;строительству</h3>
+              <h3 class="start__subtitle geologica">
+                Приступаем к&nbsp;строительству
+              </h3>
               <p class="start__desc">
                 по&nbsp;очередности работ начинаем строительные работы
                 на&nbsp;вашем объекте
@@ -1756,7 +1821,7 @@
       <section class="question">
         <div class="question__container container">
           <div class="question-left">
-            <h2 class="question__title">
+            <h2 class="question__title geologica">
               Ответы на&nbsp;часто задаваемые вопросы
             </h2>
             <ul class="question__list-acc">
@@ -1838,7 +1903,9 @@
       <section class="ask">
         <ul class="ask__container container">
           <li class="ask__left">
-            <h2 class="ask__title">Обсудим <span>ваш&nbsp;проект</span></h2>
+            <h2 class="ask__title geologica">
+              Обсудим <span>ваш&nbsp;проект</span>
+            </h2>
             <ul class="ask__list">
               <li class="ask__item">
                 Сориентируем по&nbsp;срокам и&nbsp;стоимости работ
@@ -1852,8 +1919,9 @@
               </li>
             </ul>
           </li>
+          <li class="ask__wrapp-img"></li>
           <li class="ask__right">
-            <h3 class="ask__subtitle">
+            <h3 class="ask__subtitle geologica">
               Заполните форму и&nbsp;мы&nbsp;вам перезвоним
             </h3>
             <label class="ask__label">
@@ -1903,11 +1971,11 @@
       <section class="order">
         <ul class="order__container container">
           <li class="order__left">
-            <h2 class="order__title">
+            <h2 class="order__title geologica">
               А&nbsp;также вы&nbsp;можете приобрести у&nbsp;нас
               <span> уже готовые объекты вместе с&nbsp;участком </span>
             </h2>
-            <h3 class="order__subtitle">
+            <h3 class="order__subtitle geologica">
               Мы&nbsp;строим как для Вас, так и&nbsp;для себя!
             </h3>
             <p class="order__text">
@@ -1936,7 +2004,7 @@
       </section>
       <section class="contact">
         <div class="contact__container container">
-          <h2 class="contact__title">Наши контакты</h2>
+          <h2 class="contact__title geologica">Наши контакты</h2>
           <ul class="contact__list">
             <li class="contact__item">
               <p class="contact__address-label">Адрес офиса:</p>

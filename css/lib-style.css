@@ -56,3 +56,110 @@
 .question__item-acc.active .accordion-content {
   max-height: 200px; /* Задайте максимальную высоту в зависимости от контента */
 }
+
+/* aside */
+.side-menu {
+  position: fixed;
+  right: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 10000;
+  transition: right 0.3s ease;
+}
+.menu-close-btn {
+  width: 35px;
+  height: 35px;
+  background: url("../img/close-icon.svg") no-repeat center center / 14px,
+    #ffe5d6;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+  border: none;
+  border-radius: 50%;
+}
+
+.menu-list {
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  border: 3px solid #e0b194;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 25px 14px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  transform-origin: right center;
+}
+
+.menu-item:not(:last-child) {
+  border-bottom: 3px solid #e0b194;
+}
+
+.menu-item:last-child {
+  border-bottom: 3px solid transparent;
+}
+
+.menu-item:nth-child(-n + 3) {
+  background: linear-gradient(180deg, #372e29 0%, transparent 100%);
+  background-color: #785745;
+}
+
+.menu-item:nth-child(4) {
+  background-color: #2ab200;
+}
+
+.menu-item:nth-child(5) {
+  background-color: #11aadc;
+}
+.svg-wrapp {
+  width: 24px;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.menu-item:nth-child(1) .svg-wrapp {
+  background: url("../img/menu-icon-1.svg") no-repeat center center / contain;
+}
+.menu-item:nth-child(2) .svg-wrapp {
+  background: url("../img/menu-icon-2.svg") no-repeat center center / contain;
+}
+.menu-item:nth-child(3) .svg-wrapp {
+  background: url("../img/menu-icon-3.svg") no-repeat center center / contain;
+}
+.menu-item:nth-child(4) .svg-wrapp {
+  background: url("../img/wa-icon.svg") no-repeat center center / contain;
+}
+.menu-item:nth-child(5) .svg-wrapp {
+  background: url("../img/tg-icon.svg") no-repeat center center / contain;
+}
+
+.menu-text {
+  color: #fff;
+  font-size: 13px;
+  max-width: min-content;
+}
+
+.menu-item:hover {
+  transform: scale(1.2);
+  background: #372e29;
+  border-bottom: 3px solid transparent;
+}
+
+.menu-opened.side-menu {
+  right: 0;
+}
+
+.menu-close-btn:hover {
+  transform: scale(1.1);
+}

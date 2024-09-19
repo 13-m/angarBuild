@@ -43,6 +43,10 @@ a {
   font-family: "Inter", "Geologica", "CoFo Sans";
 } */
 
+body.lock-scroll {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;

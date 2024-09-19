@@ -16,3 +16,24 @@ document.querySelectorAll(".question__item-acc").forEach((item) => {
     }
   });
 });
+
+const sideMenu = document.getElementById("sideMenu");
+const menuCloseBtn = document.getElementById("menuCloseBtn");
+
+// Закрытие меню
+menuCloseBtn.addEventListener("click", function () {
+  sideMenu.classList.remove("menu-opened");
+});
+
+const burger = document.querySelector(".burger");
+const burgerMenu = document.getElementById("burgerMenu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  burgerMenu.classList.toggle("active");
+  document.body.classList.toggle("lock-scroll");
+});
+
+burgerMenu.addEventListener("click", () => {
+  burgerMenu.classList.toggle("active");
+});

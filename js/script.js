@@ -37,3 +37,68 @@ burger.addEventListener("click", () => {
 burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("active");
 });
+
+// modal
+const modal = document.getElementById("modal");
+const buttons = document.querySelectorAll(".modal-btn");
+const closeBtn = document.querySelector(".close-btn");
+const asideBtn = document.querySelector(".aside-btn");
+
+asideBtn.addEventListener("click", () => {
+  modal.classList.toggle("visible");
+  sideMenu.classList.remove("menu-opened");
+  document.body.classList.toggle("lock");
+});
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    modal.classList.toggle("visible");
+    document.body.classList.toggle("lock");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.toggle("visible");
+  document.body.classList.toggle("lock");
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.toggle("visible");
+    document.body.classList.toggle("lock");
+  }
+});
+
+const images = [
+  'url("../img/work-img-2.jpg")',
+  'url("../img/about-img-2.jpg")',
+  'url("../img/about-img-1.jpg")',
+];
+
+// Текущий индекс изображения
+let currentIndex = 0;
+
+// Получаем контейнер и кнопки
+const container = document.querySelector(".work__wrapp-right");
+const leftBtn = document.querySelector(".work__btn-slider.left");
+const rightBtn = document.querySelector(".work__btn-slider.right");
+
+// Функция для обновления фона
+function updateBackground() {
+  container.style.backgroundImage = images[currentIndex];
+}
+
+// Обработчик для кнопки "влево"
+leftBtn.addEventListener("click", () => {
+  currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+  updateBackground();
+});
+
+// Обработчик для кнопки "вправо"
+rightBtn.addEventListener("click", () => {
+  currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+  updateBackground();
+});
+
+// Инициализируем первый фон
+updateBackground();

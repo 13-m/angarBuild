@@ -25,6 +25,25 @@
   gap: 8px;
 }
 
+.header__top-item:nth-child(1) {
+  order: 1;
+}
+.header__top-item:nth-child(2) {
+  order: 2;
+}
+.header__top-item:nth-child(3) {
+  order: 3;
+}
+.header__top-item:nth-child(4) {
+  order: 4;
+}
+.header__top-item:nth-child(5) {
+  order: 5;
+}
+.header__top-item:nth-child(6) {
+  order: 6;
+}
+
 .header__top-item:nth-child(2) {
   flex-direction: row;
   max-width: 225px;
@@ -93,6 +112,7 @@
 .header__phone {
   font-size: 22px;
   line-height: 30px;
+  white-space: nowrap;
 }
 
 .header__phone span {
@@ -200,6 +220,10 @@
   padding: 12px 0;
 }
 
+.nav__item {
+  text-align: center;
+}
+
 .nav__item:first-child {
   justify-self: flex-start;
 }
@@ -266,6 +290,7 @@
 }
 
 .view {
+  overflow: hidden;
   background: url("../img/main-img.jpg") no-repeat center center / cover;
   height: 1220px;
 }
@@ -279,6 +304,7 @@
 }
 
 .view__title {
+  position: relative;
   margin: 0;
   max-width: 95%;
   margin-bottom: 20px;
@@ -397,6 +423,7 @@
   content: "";
   background: url("../img/main-arrow.png") no-repeat center center / contain;
   pointer-events: none;
+  transform-origin: bottom left;
 }
 
 .calc {
@@ -435,7 +462,7 @@
   top: 50%;
   right: 0;
   transform: translate(30%, -50%);
-  background: url("../img/calcul-img-2.png") no-repeat center center / cover;
+  background: url("../img/calcul-img-2.png") no-repeat center center / contain;
 }
 
 .form__right {
@@ -755,29 +782,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   grid-auto-flow: row;
-  grid-template-areas:
-    "firstCon secontCon fifthCon"
-    "thirdCon fourthCon fifthCon";
-}
-
-.firstCon {
-  grid-area: firstCon;
-}
-
-.secontCon {
-  grid-area: secontCon;
-}
-
-.thirdCon {
-  grid-area: thirdCon;
-}
-
-.fourthCon {
-  grid-area: fourthCon;
-}
-
-.fifthCon {
-  grid-area: fifthCon;
 }
 
 .about__item-card {
@@ -838,15 +842,23 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .about__item-card:nth-child(1) {
   background-image: url("../img/about-img-1.jpg");
+  grid-row-start: 1;
+  grid-column-start: 1;
 }
 .about__item-card:nth-child(2) {
   background-image: url("../img/about-img-2.jpg");
+  grid-row-start: 1;
+  grid-column-start: 2;
 }
 .about__item-card:nth-child(3) {
   background-image: url("../img/about-img-3.jpg");
+  grid-row-start: 2;
+  grid-column-start: 1;
 }
 .about__item-card:nth-child(4) {
   background-image: url("../img/about-img-4.jpg");
+  grid-row-start: 2;
+  grid-column-start: 2;
 }
 .about__item-card:nth-child(5) {
   padding-bottom: 60px;
@@ -1119,7 +1131,11 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   justify-content: space-between;
   width: 100%;
   padding-bottom: 40px;
-  background: url("../img/work-img-2.jpg") no-repeat center center / cover;
+  background-image: url('../img/work-img-2.jpg');
+  transition: background-image 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-size: cover;
   border: 1px solid #d9d9d9;
 }
 
@@ -1183,7 +1199,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   bottom: 0;
   width: 390px;
   height: 580px;
-  background: url("../img/feedback-img-2.png") no-repeat center center / cover;
+  background: url("../img/feedback-img-2.png") no-repeat center center / contain;
 }
 
 .feedback__left {
@@ -1532,11 +1548,13 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .start__item:nth-child(2) {
   padding: 55px 10px 40px 30px;
-  background: url("../img/together-img-2.png") no-repeat center center / cover;
+  background: url("../img/together-img-2.png") no-repeat center bottom / contain,
+    url("../img/fon-together-2.png") no-repeat center center / cover;
 }
 
 .start__item:nth-child(3) {
-  background: url("../img/together-img-3.jpg") no-repeat center center / cover;
+  background: url("../img/together-img-3.jpg") no-repeat center bottom / contain,
+    url("../img/fon-together-3.png") no-repeat center center / cover;
 }
 
 .span-wrapp {
@@ -1990,10 +2008,28 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .contact__photo {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: flex-end;
   padding: 24px 26px;
+}
+
+.contact__photo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    189.29deg,
+    rgba(51, 45, 42, 0) 54.16%,
+    #332d2a 86.19%
+  );
+  z-index: 1;
+  transition: opacity 0.5s ease;
+  opacity: 0.5;
 }
 
 .contact__desc {
@@ -2001,12 +2037,12 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   font-weight: 600;
   line-height: 24px;
   color: #fff;
+  z-index: 2;
 }
 
 .contact__map {
   width: 100%;
   height: 100%;
-  background: url("../img/map-img.png") no-repeat center center / cover;
 }
 
 .footer {

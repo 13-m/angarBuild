@@ -52,6 +52,14 @@ body.lock-scroll {
   margin: 0 auto;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
 .btn-blue {
   display: flex;
   align-items: center;

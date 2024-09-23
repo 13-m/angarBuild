@@ -69,36 +69,104 @@ window.addEventListener("click", (e) => {
   }
 });
 
+// слайды
+
+const slides = document.querySelectorAll(".work__wrapp");
+const sliderContainer = document.querySelector(".slider");
+const nextButton = document.querySelector(".work__btn-slider.right");
+const prevButton = document.querySelector(".work__btn-slider.left");
+let currentSlide = 0;
+
+function updateSliderHeight() {
+  const activeSlide = slides[currentSlide];
+  const slideHeight = activeSlide.offsetHeight;
+  sliderContainer.style.height = `${slideHeight}px`;
+}
+
+function showSlide(newSlideIndex, direction) {
+  slides[currentSlide].classList.remove("active");
+
+  if (direction === "next") {
+    slides[currentSlide].classList.add("previous-left");
+  } else if (direction === "prev") {
+    slides[currentSlide].classList.add("previous-right");
+  }
+
+  currentSlide = newSlideIndex;
+
+  slides[currentSlide].classList.remove("previous-left", "previous-right");
+  slides[currentSlide].classList.add("active");
+
+  updateSliderHeight();
+}
+
+nextButton.addEventListener("click", () => {
+  const newSlideIndex = (currentSlide + 1) % slides.length;
+  showSlide(newSlideIndex, "next");
+  console.log("right");
+});
+
+prevButton.addEventListener("click", () => {
+  const newSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(newSlideIndex, "prev");
+  console.log("left");
+});
+
+showSlide(currentSlide);
+updateSliderHeight();
+
+// Картиночки в работах - слайдер
+
 const images = [
   'url("../img/work-img-2.jpg")',
   'url("../img/about-img-2.jpg")',
   'url("../img/about-img-1.jpg")',
 ];
 
-// Текущий индекс изображения
 let currentIndex = 0;
 
-// Получаем контейнер и кнопки
 const container = document.querySelector(".work__wrapp-right");
-const leftBtn = document.querySelector(".work__btn-slider.left");
-const rightBtn = document.querySelector(".work__btn-slider.right");
+const leftBtn = document.querySelector(".work__btn-work__btn-galery.left");
+const rightBtn = document.querySelector(".work__btn-work__btn-galery.right");
 
-// Функция для обновления фона
 function updateBackground() {
   container.style.backgroundImage = images[currentIndex];
 }
 
-// Обработчик для кнопки "влево"
 leftBtn.addEventListener("click", () => {
   currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
   updateBackground();
 });
 
-// Обработчик для кнопки "вправо"
 rightBtn.addEventListener("click", () => {
   currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
   updateBackground();
 });
 
-// Инициализируем первый фон
 updateBackground();
+
+// custom select
+document.addEventListener("DOMContentLoaded", function () {
+  const customSelect = document.getElementById("customSelect");
+  const trigger = customSelect.querySelector(".select-trigger");
+  const optionsContainer = customSelect.querySelector(".select-options");
+  const options = optionsContainer.querySelectorAll(".option");
+
+  trigger.addEventListener("click", function () {
+    customSelect.classList.toggle("active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", function () {
+      trigger.textContent = option.textContent;
+      trigger.setAttribute("data-value", option.getAttribute("data-value"));
+      customSelect.classList.remove("active");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!customSelect.contains(e.target)) {
+      customSelect.classList.remove("active");
+    }
+  });
+});

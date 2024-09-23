@@ -61,6 +61,7 @@ body.lock {
 }
 
 .btn-blue {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,6 +75,25 @@ body.lock {
   font-size: 18px;
   font-weight: 600;
   transition: background-color 0.3s ease;
+}
+
+.btn-blue::after {
+  content: "";
+  width: 15px;
+  height: 14px;
+  background: url("../img/arrow-icon-2.svg") no-repeat center center / contain;
+}
+
+.header__link.btn-blue::after,
+.header__btn.btn-blue::after {
+  display: none;
+}
+
+.header__link.btn-blue::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url("../img/calc-icon.svg") no-repeat center center / contain;
 }
 
 .btn-blue:hover {

@@ -70,8 +70,9 @@
 }
 
 .header__icon-wrapp {
+  padding: 4px 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   justify-content: center;
   width: 55px;
@@ -93,6 +94,10 @@
 }
 
 .header__icon {
+  width: 26px;
+  height: 26px;
+  z-index: 10;
+  background: url("../img/header-icon-1.svg") no-repeat center center / contain;
 }
 
 .header__awards-wrapp {
@@ -390,6 +395,21 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: #ffffff0d;
+}
+
+.view__item:nth-child(1) .view__icon-wrapp {
+  background: url("../img/benefit-icon-3.svg") no-repeat center center / 32px,
+    #ffffff0d;
+}
+
+.view__item:nth-child(2) .view__icon-wrapp {
+  background: url("../img/benefit-icon-2.svg") no-repeat center center / 32px,
+    #ffffff0d;
+}
+
+.view__item:nth-child(3) .view__icon-wrapp {
+  background: url("../img/benefit-icon-4.svg") no-repeat center center / 32px,
+    #ffffff0d;
 }
 
 .view__text {
@@ -714,7 +734,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   color: #2bb2ffcc;
 }
 
-.cacl__btn {
+.calc__btn {
   /* justify-content: center;
   display: flex;
   align-items: center;
@@ -980,7 +1000,31 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   height: auto;
   margin-bottom: 30px;
   aspect-ratio: 1;
-  background: #0074b60d;
+}
+
+.service__wrapp-item:nth-child(1) .service__wrapp-svg {
+  background: url("../img/service-icon-1.svg") no-repeat center center / 36px,
+    #0074b60d;
+}
+.service__wrapp-item:nth-child(2) .service__wrapp-svg {
+  background: url("../img/service-icon-2.svg") no-repeat center center / 36px,
+    #0074b60d;
+}
+.service__wrapp-item:nth-child(3) .service__wrapp-svg {
+  background: url("../img/service-icon-3.svg") no-repeat center center / 36px,
+    #0074b60d;
+}
+.service__wrapp-item:nth-child(4) .service__wrapp-svg {
+  background: url("../img/service-icon-4.svg") no-repeat center center / 36px,
+    #0074b60d;
+}
+.service__wrapp-item:nth-child(5) .service__wrapp-svg {
+  background: url("../img/service-icon-5.svg") no-repeat center center / 36px,
+    #0074b60d;
+}
+.service__wrapp-item:nth-child(6) .service__wrapp-svg {
+  background: url("../img/service-icon-6.svg") no-repeat center center / 36px,
+    #0074b60d;
 }
 
 .service__subtitle {
@@ -1019,11 +1063,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   font-weight: 700;
   line-height: 26px;
   color: #0074b6;
-}
-
-.work__wrapp {
-  flex-direction: row;
-  gap: 10px;
 }
 
 .work__wrapp-left {
@@ -1131,10 +1170,10 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   justify-content: space-between;
   width: 100%;
   padding-bottom: 40px;
-  background-image: url('../img/work-img-2.jpg');
+  background-image: url("../img/work-img-2.jpg");
   transition: background-image 0.5s ease-in-out;
   background-repeat: no-repeat;
-  background-position: center ;
+  background-position: center;
   background-size: cover;
   border: 1px solid #d9d9d9;
 }
@@ -1158,7 +1197,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   padding: 0 40px;
 }
 
-.work__btn-slider {
+.work__btn-galery {
   width: 170px;
   height: 45px;
   padding: 0 27px;
@@ -1168,16 +1207,16 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   transition: background 0.3s ease;
 }
 
-.work__btn-slider:hover {
+.work__btn-galery:hover {
   background: url("../img/arrow-slider-icon.svg") no-repeat right 27px center /
       115px,
     #ffffffcc;
 }
 
-.work__btn-slider.left {
+.work__btn-galery.left {
 }
 
-.work__btn-slider.right {
+.work__btn-galery.right {
   transform: rotate(180deg);
 }
 
@@ -1290,6 +1329,65 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   cursor: pointer;
 }
 
+/* Custom select */
+
+:root {
+  --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
+  --gray: #34495e;
+  /* --gray: #ffffff80; */
+  --darkgray: #2c3e50;
+  /* --darkgray: #ffffff80; */
+}
+
+.custom-select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+.custom-select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.custom-select-wrapp {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+/* Arrow */
+.custom-select-wrapp::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.custom-select-wrapp:hover::after {
+  color: #f39c12;
+}
+
+.down_note {
+  display: flex;
+  justify-content: center;
+}
+
+/* Custom select end*/
+
 .feedback-right__label {
 }
 
@@ -1373,6 +1471,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .benefit__wrapp-svg {
+  padding: 15px;
   margin-bottom: 34px;
   display: flex;
   justify-content: center;
@@ -1383,22 +1482,28 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .benefit__item:nth-child(1) .benefit__wrapp-svg {
-  background-color: #e6912d;
+  background: url("../img/benefit-icon-1.svg") no-repeat center center / 40px,
+    #e6912d;
 }
 .benefit__item:nth-child(2) .benefit__wrapp-svg {
-  background-color: #d7a07e;
+  background: url("../img/benefit-icon-2.svg") no-repeat center center / 40px,
+    #d7a07e;
 }
 .benefit__item:nth-child(3) .benefit__wrapp-svg {
-  background-color: #495ecd;
+  background: url("../img/benefit-icon-3.svg") no-repeat center center / 40px,
+    #495ecd;
 }
 .benefit__item:nth-child(4) .benefit__wrapp-svg {
-  background-color: #1197e2;
+  background: url("../img/benefit-icon-4.svg") no-repeat center center / 40px,
+    #1197e2;
 }
 .benefit__item:nth-child(5) .benefit__wrapp-svg {
-  background-color: #51443d;
+  background: url("../img/benefit-icon-5.svg") no-repeat center center / 40px,
+    #51443d;
 }
 .benefit__item:nth-child(6) .benefit__wrapp-svg {
-  background-color: #a461e6;
+  background: url("../img/benefit-icon-6.svg") no-repeat center center / 40px,
+    #a461e6;
 }
 
 .benefit__subtitle {

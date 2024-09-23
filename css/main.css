@@ -761,6 +761,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 .about {
   padding-top: 100px;
   margin-bottom: 120px;
+  overflow: hidden;
 }
 
 .about__container-list {
@@ -1330,62 +1331,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 /* Custom select */
-
-:root {
-  --background-gradient: linear-gradient(178deg, #ffff33 10%, #3333ff);
-  --gray: #34495e;
-  /* --gray: #ffffff80; */
-  --darkgray: #2c3e50;
-  /* --darkgray: #ffffff80; */
-}
-
-.custom-select {
-  /* Reset Select */
-  appearance: none;
-  outline: 10px red;
-  border: 0;
-  box-shadow: none;
-  /* Personalize */
-  flex: 1;
-  padding: 0 1em;
-  color: #fff;
-  background-color: var(--darkgray);
-  background-image: none;
-  cursor: pointer;
-}
-/* Remove IE arrow */
-.custom-select::-ms-expand {
-  display: none;
-}
-/* Custom Select wrapper */
-.custom-select-wrapp {
-  position: relative;
-  display: flex;
-  width: 20em;
-  height: 3em;
-  border-radius: 0.25em;
-  overflow: hidden;
-}
-/* Arrow */
-.custom-select-wrapp::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  transition: 0.25s all ease;
-  pointer-events: none;
-}
-/* Transition */
-.custom-select-wrapp:hover::after {
-  color: #f39c12;
-}
-
-.down_note {
-  display: flex;
-  justify-content: center;
-}
-
 /* Custom select end*/
 
 .feedback-right__label {

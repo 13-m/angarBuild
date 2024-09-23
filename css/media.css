@@ -1054,6 +1054,11 @@
     display: none;
   }
 
+  .calc__item:nth-child(1) .calc__wrapp-list,
+  .calc__item:first-child .calc__wrapp-item:first-child {
+    flex-direction: row;
+  }
+
   .feedback {
     background: #fff;
     margin-bottom: 54px;

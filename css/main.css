@@ -14,7 +14,9 @@
 .header__top-list {
   margin: 0 auto;
   padding-top: 22px;
-  gap: 25px;
+  max-width: 1820px;
+  width: 100%;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
 }
@@ -316,6 +318,7 @@
   font-weight: 300;
   font-size: 60px;
   color: #2c2c2c;
+  letter-spacing: -1px;
 }
 
 .view__title .color {
@@ -596,8 +599,7 @@ input[type="checkbox"] {
 .custom-checkbox {
   display: inline-block;
   width: 18px;
-  height: auto;
-  aspect-ratio: 1;
+  height: 18px;
   border: 2px solid #d9d9d9;
   position: relative;
   cursor: pointer;
@@ -837,7 +839,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   );
   z-index: 1;
   transition: opacity 0.5s ease;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .about__item-card::after {
@@ -2189,6 +2191,12 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .footer-bottom .footer__list {
   grid-template-columns: 1fr 1fr 1fr 1fr 0.7fr 0.6fr;
+  gap: 20px;
+}
+
+.footer-bottom .footer__item {
+  gap: 14px;
+  white-space: nowrap;
 }
 
 .footer__item.span {
@@ -2196,5 +2204,5 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .footer__more {
-  font-size: 15px;
+  font-size: 14px;
 }

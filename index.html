@@ -7,10 +7,14 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <meta name="robots" content="noindex" />
-    <link rel="shortcut icon" href="img/logo-icon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/logo-icon.svg" type="image/x-icon" />
     <title>АнгарСтрой</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=6c5ee1b8-22cc-4abb-9bcd-f52180791829&lang=ru_RU"
+      type="text/javascript"
+    ></script>
   </head>
   <body>
     <header>
@@ -306,7 +310,7 @@
           <div class="header-wrapp--mobile">
             <img
               class="header-logo--mobile"
-              src="img/logo-img.png"
+              src="./img/logo-img.png"
               alt="логотип компании АнгарСтрой"
             />
             <button class="burger">
@@ -1322,7 +1326,7 @@
               на&nbsp;одной встрече
             </p>
             <img
-              src="img/service-icon-1.png"
+              src="./img/service-icon-1.png"
               alt="логотип"
               class="feedback-left__logo"
             />
@@ -1757,7 +1761,7 @@
         <ul class="footer__list footer__nav">
           <li class="footer__item">
             <img
-              src="/img/logo-icon.svg"
+              src="./img/logo-icon.svg"
               alt="Логотип компании Ангарстрой"
               class="footer__logo"
             />
@@ -1874,18 +1878,44 @@
     </footer>
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
-    <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"
-      type="text/javascript"
-    ></script>
     <script type="text/javascript">
-      ymaps.ready(init);
-      function init() {
-        var myMap = new ymaps.Map("map", {
-          center: [60.001648, 30.264577],
-          zoom: 14,
-        });
-      }
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map(
+            "map",
+            {
+              center: [60.023645, 30.298275],
+              zoom: 16,
+            },
+            {
+              searchControlProvider: "yandex#search",
+            }
+          ),
+          // Создаём макет содержимого.
+          MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #000000; font-weight: bold;">$[properties.iconContent]</div>'
+          ),
+          myPlacemark = new ymaps.Placemark(
+            myMap.getCenter(),
+            {
+              hintContent: "Собственный значок метки",
+              balloonContent: "Это красивая метка",
+            },
+            {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: "default#image",
+              // Своё изображение иконки метки.
+              iconImageHref: "img/map-icon.svg",
+              // Размеры метки.
+              iconImageSize: [160, 80],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-140, -58],
+            }
+          );
+
+        myMap.geoObjects.add(myPlacemark);
+      });
     </script>
     <script>
       $(".mask-phone").mask("+7 (999) 999-99-99");

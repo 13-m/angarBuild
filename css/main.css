@@ -1278,7 +1278,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 .feedback__right {
   display: flex;
   flex-direction: column;
-  padding: 110px 25px 56px 60px;
+  padding: 110px 60px 60px;
   background: linear-gradient(180deg, #51443d 0%, #785745 100%);
   outline: 10px solid #fff;
   max-width: 490px;

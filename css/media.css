@@ -800,10 +800,9 @@
     border: none;
     background-color: #ffe5d6;
     width: 55px;
-    height: auto;
+    height: 55px;
     align-items: center;
     gap: 5px;
-    aspect-ratio: 1;
     z-index: 1000;
   }
 

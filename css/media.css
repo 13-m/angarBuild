@@ -612,6 +612,7 @@
   }
 
   .about__wrapp-left .about__item-card {
+    padding-bottom: 16px;
     aspect-ratio: 1.5;
   }
 
@@ -1202,7 +1203,7 @@
   }
 
   .start__item {
-    min-height: 500px;
+    min-height: 550px;
   }
 
   .span-wrapp {
@@ -1222,6 +1223,12 @@
     bottom: 0;
     right: 0;
     background: url("../img/together-img-1.png") no-repeat center center / cover;
+  }
+
+  .start__item:nth-child(3) {
+    background: url("../img/together-img-3-1-5x.jpg") no-repeat center bottom /
+        contain,
+      url("../img/fon-together-3.png") no-repeat center center / cover;
   }
 
   .ask {

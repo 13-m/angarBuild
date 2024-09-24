@@ -322,11 +322,11 @@ textarea {
 }
 
 .work__btn-slider.left:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(180deg);
   transition: transform 0.3s ease;
 }
 .work__btn-slider.right:hover {
-  transform: scale(1.2) rotate(-180deg);
+  transform: scale(1.2);
   transition: transform 0.3s ease;
 }
 

@@ -1208,20 +1208,22 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   background: url("../img/arrow-slider-icon.svg") no-repeat right 27px center /
       115px,
     #ffffff80;
-  transition: background 0.3s ease;
-}
-
-.work__btn-galery:hover {
-  background: url("../img/arrow-slider-icon.svg") no-repeat right 27px center /
-      115px,
-    #ffffffcc;
-}
-
-.work__btn-galery.left {
+  transition: transform 0.3s ease;
 }
 
 .work__btn-galery.right {
   transform: rotate(180deg);
+}
+
+.work__btn-galery:hover {
+  transform: scale(1.2);
+}
+
+.work__btn-galery.right:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+
+.work__btn-galery.left {
 }
 
 .feedback {
@@ -2181,6 +2183,12 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .social__item {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social__item:hover {
+  transform: scale(1.2);
 }
 
 .footer__desc {

@@ -5,6 +5,24 @@
   display: none;
 }
 
+@media (max-height: 700px) {
+  .menu-item {
+    gap: 6px;
+    padding: 14px 6px;
+  }
+}
+
+@media (max-height: 520px) {
+  .menu-item {
+    gap: 6px;
+    padding: 25px 14px;
+  }
+
+  .menu-text {
+    display: none;
+  }
+}
+
 @media (max-width: 1700px) {
   .header__name {
     display: none;

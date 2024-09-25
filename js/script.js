@@ -126,34 +126,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Картинки в слайдере
-  const images = [
-    'url("../img/work-img-2.jpg")',
-    'url("../img/about-img-2.jpg")',
-    'url("../img/about-img-1.jpg")',
+  const imagesForSliders = [
+    ['url("../img/about-img-1.jpg")', 'url("../img/about-img-2.jpg")'],
+    ['url("../img/about-img-3.jpg")', 'url("../img/about-img-4.jpg")'],
+    ['url("../img/about-img-5.jpg")', 'url("../img/form-img-1.jpg")'],
   ];
 
-  let currentIndex = 0;
-  const container = document.querySelector(".work__wrapp-right");
-  const leftBtn = document.querySelector(".work__btn-work__btn-galery.left");
-  const rightBtn = document.querySelector(".work__btn-work__btn-galery.right");
+  function updateBackground(slider, images, index) {
+    const container = slider.querySelector(".work__wrapp-right");
+    container.style.backgroundImage = images[index];
+  }
 
-  if (container && leftBtn && rightBtn) {
-    function updateBackground() {
-      container.style.backgroundImage = images[currentIndex];
-    }
+  const sliders = document.querySelectorAll(".work__wrapp");
 
+  sliders.forEach((slider, i) => {
+    const images = imagesForSliders[i];
+    let currentIndex = 0;
+
+    const leftBtn = slider.querySelector(".work__btn-galery.left");
+    const rightBtn = slider.querySelector(".work__btn-galery.right");
+
+    updateBackground(slider, images, currentIndex);
+
+    // Обработчик клика на левую кнопку
     leftBtn.addEventListener("click", () => {
       currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-      updateBackground();
+      updateBackground(slider, images, currentIndex);
     });
 
+    // Обработчик клика на правую кнопку
     rightBtn.addEventListener("click", () => {
       currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-      updateBackground();
+      updateBackground(slider, images, currentIndex);
     });
-
-    updateBackground();
-  }
+  });
 
   // Custom select
   const defaultOption = document.querySelector(".default_option");
@@ -178,4 +184,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
+
+// new slider
+const imagesForContactPhotos = [
+  ['url("../img/contact-img-1.jpg")', 'url("../img/contact-img-2.jpg")'],
+  ['url("../img/contact-img-2.jpg")', 'url("../img/contact-img-1.jpg")'],
+];
+
+// Функция для обновления фонового изображения активного блока
+function updateBackground(photoBlock, images, index) {
+  photoBlock.style.backgroundImage = images[index];
+}
+
+// Находим все блоки contact__photo
+const contactPhotos = document.querySelectorAll(".contact__photo");
+
+// Проходим по каждому блоку
+contactPhotos.forEach((photoBlock, i) => {
+  // У каждого блока свой список изображений
+  const images = imagesForContactPhotos[i];
+  let currentIndex = 0; // Индекс изображения для каждого блока начинается с 0
+
+  const leftBtn = photoBlock.querySelector(".contact__btn-galery.left");
+  const rightBtn = photoBlock.querySelector(".contact__btn-galery.right");
+
+  // Устанавливаем начальное изображение для каждого блока
+  updateBackground(photoBlock, images, currentIndex);
+
+  // Обработчик клика на левую кнопку
+  leftBtn.addEventListener("click", () => {
+    currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    updateBackground(photoBlock, images, currentIndex);
+  });
+
+  // Обработчик клика на правую кнопку
+  rightBtn.addEventListener("click", () => {
+    currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    updateBackground(photoBlock, images, currentIndex);
+  });
 });

@@ -734,6 +734,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .politic {
+  display: inline-block;
   color: #2bb2ffcc;
 }
 
@@ -1878,9 +1879,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .ask__wrapp {
-  display: flex;
   font-size: 13px;
-  flex-direction: column;
 }
 
 .ask__btn {
@@ -2196,6 +2195,10 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 .footer__subtitle:hover {
   font-weight: 700;
   color: #0074b6;
+}
+
+.footer__list-gap .footer__subtitle {
+  pointer-events: none;
 }
 
 .footer__name {

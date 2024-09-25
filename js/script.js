@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     burgerMenu.addEventListener("click", () => {
+      document.body.classList.toggle("lock-scroll");
       burgerMenu.classList.toggle("active");
     });
   }

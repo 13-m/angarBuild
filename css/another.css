@@ -7,3 +7,88 @@ body {
 main {
   flex: 1;
 }
+
+.another {
+  font-family: "Times New Roman", serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: bold;
+  margin: 16px 0;
+  color: #222;
+  text-align: center;
+}
+
+h2:last-of-type {
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-weight: normal;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+.nav__breadcrumb {
+}
+
+.nav-bread__list {
+  gap: 20px;
+}
+
+.nav-bread__item {
+  gap: 20px;
+  display: flex;
+  position: relative;
+}
+
+.nav-bread__item:first-child::after {
+  content: "/";
+  font-weight: 700;
+}
+
+.nav-bread__link {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #0000ee;
+  color: #0000ee;
+}
+
+.nav-bread__link::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 170%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-bread__text {
+}
+
+.red-line {
+  text-indent: 20px;
+}
+
+.text {
+  margin-bottom: 16px;
+  text-align: justify;
+}

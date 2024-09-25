@@ -128,7 +128,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Картинки в слайдере
   const imagesForSliders = [
-    ['url("../img/about-img-1.jpg")', 'url("../img/about-img-2.jpg")'],
+    [
+      'url("../img/work-first-img-1.png")',
+      'url("../img/work-first-img-2.png")',
+      'url("../img/work-first-img-3.png")',
+      'url("../img/work-first-img-4.png")',
+      'url("../img/work-first-img-5.png")',
+      'url("../img/work-first-img-6.png")',
+      'url("../img/work-first-img-7.png")',
+      'url("../img/work-first-img-8.png")',
+      'url("../img/work-first-img-9.png")',
+      'url("../img/work-first-img-10.png")',
+    ],
     ['url("../img/about-img-3.jpg")', 'url("../img/about-img-4.jpg")'],
     ['url("../img/about-img-5.jpg")', 'url("../img/form-img-1.jpg")'],
   ];
@@ -189,8 +200,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // new slider
 const imagesForContactPhotos = [
-  ['url("../img/contact-img-1.jpg")', 'url("../img/contact-img-2.jpg")'],
-  ['url("../img/contact-img-2.jpg")', 'url("../img/contact-img-1.jpg")'],
+  ['url("../img/contact-img-1.jpg")'],
+  [
+    'url("../img/cont-sec-img-1.jpeg")',
+    'url("../img/cont-sec-img-2.jpeg")',
+    'url("../img/cont-sec-img-3.jpeg")',
+  ],
 ];
 
 // Функция для обновления фонового изображения активного блока

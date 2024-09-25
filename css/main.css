@@ -2010,7 +2010,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .contact__item:nth-child(2) .contact__photo:nth-child(2) {
-  background: url("../img/contact-img-2.jpg") no-repeat center center / cover;
+  background: url("../img/cont-sec-img-1.jpeg") no-repeat center center / cover;
 }
 
 .contact__address-label {

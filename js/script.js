@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const activeSlide = slides[currentSlide];
       const slideHeight = activeSlide.offsetHeight;
       sliderContainer.style.height = `${slideHeight + 1}px `;
-      console.log(slideHeight);
     }
 
     function showSlide(newSlideIndex, direction) {

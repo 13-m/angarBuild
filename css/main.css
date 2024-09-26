@@ -720,6 +720,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .calc__label-agree .custom-checkbox {
   width: 14px;
+  height: 14px;
   background-color: #ffffff80;
   border: none;
   padding: 3px;
@@ -734,7 +735,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .politic {
-  display: inline-block;
+  display: inline;
   color: #2bb2ffcc;
 }
 
@@ -1354,6 +1355,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .feedback__label-agree .custom-checkbox {
   width: 14px;
+  height: 14px;
   background-color: #ffffff80;
   border: none;
   padding: 3px;
@@ -1364,9 +1366,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .feedback__wrapp {
-  display: flex;
   font-size: 13px;
-  flex-direction: column;
 }
 
 .feedback__btn {
@@ -1806,7 +1806,6 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .ask__right {
-  max-width: 490px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1869,6 +1868,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .ask__label-agree .custom-checkbox {
   width: 14px;
+  height: 14px;
   background-color: #ffffff80;
   border: none;
   padding: 3px;

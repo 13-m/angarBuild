@@ -5,6 +5,10 @@
 @import url("./normalize.css");
 @import url("./lib-style.css");
 
+.work__wrapp-btn {
+  display: none !important;
+}
+
 .header__container {
   display: flex;
   flex-direction: column;

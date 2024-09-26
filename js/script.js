@@ -127,28 +127,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Картинки в слайдере
   const imagesForSliders = [
-    [
-      'url("./img/work-first-img-1.png")',
-      'url("./img/work-first-img-2.png")',
-      'url("./img/work-first-img-3.png")',
-      'url("./img/work-first-img-4.png")',
-      'url("./img/work-first-img-5.png")',
-      'url("./img/work-first-img-6.png")',
-      'url("./img/work-first-img-7.png")',
-      'url("./img/work-first-img-8.png")',
-      'url("./img/work-first-img-9.png")',
-      'url("./img/work-first-img-10.png")',
-    ],
-    ['url("./img/about-img-3.jpg")', 'url("./img/about-img-4.jpg")'],
-    ['url("./img/about-img-5.jpg")', 'url("./img/form-img-1.jpg")'],
+    // [
+    //   'url("./img/work-first-img-1.png")',
+    //   'url("./img/work-first-img-2.png")',
+    //   'url("./img/work-first-img-3.png")',
+    //   'url("./img/work-first-img-4.png")',
+    //   'url("./img/work-first-img-5.png")',
+    //   'url("./img/work-first-img-6.png")',
+    //   'url("./img/work-first-img-7.png")',
+    //   'url("./img/work-first-img-8.png")',
+    //   'url("./img/work-first-img-9.png")',
+    //   'url("./img/work-first-img-10.png")',
+    // ],
+    // ['url("./img/about-img-3.jpg")', 'url("./img/about-img-4.jpg")'],
+    // ['url("./img/about-img-5.jpg")', 'url("./img/form-img-1.jpg")'],
+    ['url("./img/work-1-1-img.jpg")'],
+    ['url("./img/work-2-1-img.jpg")'],
+    ['url("./img/work-3-1-img.jpg")'],
+    ['url("./img/work-4-1-img.jpg")'],
+    ['url("./img/work-5-1-img.jpg")'],
   ];
 
   function updateBackground(slider, images, index) {
-    const container = slider.querySelector(".work__wrapp-right");
+    const container = slider.querySelector(".work__wrapp");
     container.style.backgroundImage = images[index];
   }
 
-  const sliders = document.querySelectorAll(".work__wrapp");
+  const sliders = document.querySelectorAll(".work__wrapp-right");
 
   sliders.forEach((slider, i) => {
     const images = imagesForSliders[i];
@@ -159,13 +164,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateBackground(slider, images, currentIndex);
 
-    // Обработчик клика на левую кнопку
     leftBtn.addEventListener("click", () => {
       currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
       updateBackground(slider, images, currentIndex);
     });
 
-    // Обработчик клика на правую кнопку
     rightBtn.addEventListener("click", () => {
       currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
       updateBackground(slider, images, currentIndex);
@@ -195,47 +198,81 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-});
 
-// new slider
-const imagesForContactPhotos = [
-  ['url("./img/contact-img-1.jpg")'],
-  [
-    'url("./img/cont-sec-img-1.jpeg")',
-    'url("./img/cont-sec-img-2.jpeg")',
-    'url("./img/cont-sec-img-3.jpeg")',
-  ],
-];
+  // new slider
+  const imagesForContactPhotos = [
+    [
+      'url("./img/cont-fir-img-1.jpg")',
+      'url("./img/cont-fir-img-2.jpg")',
+      'url("./img/cont-fir-img-3.jpg")',
+      'url("./img/cont-fir-img-4.jpg")',
+    ],
+    [
+      'url("./img/cont-sec-img-1.jpeg")',
+      'url("./img/cont-sec-img-2.jpeg")',
+      'url("./img/cont-sec-img-3.jpeg")',
+    ],
+  ];
 
-// Функция для обновления фонового изображения активного блока
-function updateBackground(photoBlock, images, index) {
-  photoBlock.style.backgroundImage = images[index];
-}
+  // Функция для обновления фонового изображения активного блока
+  function updateBackground(photoBlock, images, index) {
+    photoBlock.style.backgroundImage = images[index];
+  }
 
-// Находим все блоки contact__photo
-const contactPhotos = document.querySelectorAll(".contact__photo");
+  // Находим все блоки contact__photo
+  const contactPhotos = document.querySelectorAll(".contact__photo");
 
-// Проходим по каждому блоку
-contactPhotos.forEach((photoBlock, i) => {
-  // У каждого блока свой список изображений
-  const images = imagesForContactPhotos[i];
-  let currentIndex = 0; // Индекс изображения для каждого блока начинается с 0
+  // Проходим по каждому блоку
+  contactPhotos.forEach((photoBlock, i) => {
+    // У каждого блока свой список изображений
+    const images = imagesForContactPhotos[i];
+    let currentIndex = 0; // Индекс изображения для каждого блока начинается с 0
 
-  const leftBtn = photoBlock.querySelector(".contact__btn-galery.left");
-  const rightBtn = photoBlock.querySelector(".contact__btn-galery.right");
+    const leftBtn = photoBlock.querySelector(".contact__btn-galery.left");
+    const rightBtn = photoBlock.querySelector(".contact__btn-galery.right");
 
-  // Устанавливаем начальное изображение для каждого блока
-  updateBackground(photoBlock, images, currentIndex);
-
-  // Обработчик клика на левую кнопку
-  leftBtn.addEventListener("click", () => {
-    currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    // Устанавливаем начальное изображение для каждого блока
     updateBackground(photoBlock, images, currentIndex);
+
+    // Обработчик клика на левую кнопку
+    leftBtn.addEventListener("click", () => {
+      currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+      updateBackground(photoBlock, images, currentIndex);
+    });
+
+    // Обработчик клика на правую кнопку
+    rightBtn.addEventListener("click", () => {
+      currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+      updateBackground(photoBlock, images, currentIndex);
+    });
   });
 
-  // Обработчик клика на правую кнопку
-  rightBtn.addEventListener("click", () => {
-    currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-    updateBackground(photoBlock, images, currentIndex);
+  // forms
+
+  const forms = document.querySelectorAll(".form");
+
+  forms.forEach((form) => {
+    const checkbox = form.querySelector(".agree");
+    const sendBtn = form.querySelector(".sendBtn");
+    const checkboxSpan = form.querySelector(".custom-checkbox");
+
+    form.addEventListener("submit", (e) => {
+      if (!checkbox.checked) {
+        e.preventDefault();
+
+        if (!form.querySelector(".tooltip")) {
+          const tooltip = document.createElement("p");
+          tooltip.classList.add("tooltip");
+          tooltip.textContent = "Чтобы отправить заявку, заполните это поле";
+          checkboxSpan.appendChild(tooltip);
+
+          setTimeout(() => {
+            tooltip.remove();
+          }, 30000);
+        }
+      } else {
+        console.log("Форма отправлена");
+      }
+    });
   });
 });

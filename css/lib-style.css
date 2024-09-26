@@ -420,6 +420,36 @@ textarea {
   transform: rotate(-225deg) translateX(-50%);
 }
 
+.tooltip {
+  visibility: visible;
+  width: max-content;
+  background-color: black;
+  font-weight: 600;
+  color: #fff;
+  transform: translateX(-50%);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  border: 2px solid #ff6666;
+  position: absolute;
+  background-color: #fff;
+  color: #ff6666;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ff6666 transparent transparent transparent;
+}
+
 @media (max-width: 1260px) {
   .plus {
     right: 0;

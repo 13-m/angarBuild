@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ['url("./img/work-2-1-img.jpg")'],
     ['url("./img/work-3-1-img.jpg")'],
     ['url("./img/work-4-1-img.jpg")'],
-    ['url("./img/work-5-1-img.jpg")'],
   ];
 
   function updateBackground(slider, images, index) {

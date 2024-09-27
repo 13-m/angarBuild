@@ -307,4 +307,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  //  свайп
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function handleGesture() {
+    if (touchEndX > touchStartX + 50) {
+      // Проверяем, что свайп вправо достаточно длинный (50px)
+      sideMenu.classList.remove("menu-opened"); // Скрываем меню
+      menuCloseBtn.classList.toggle("rotate");
+    }
+  }
+  //127.0.0.1:5500/index.html#calc
+  // Отслеживаем начало касания
+  http: sideMenu.addEventListener("touchstart", function (event) {
+    touchStartX = event.changedTouches[0].screenX;
+  });
+
+  // Отслеживаем движение пальца
+  sideMenu.addEventListener("touchmove", function (event) {
+    touchEndX = event.changedTouches[0].screenX;
+  });
+
+  // По завершении касания проверяем направление свайпа
+  sideMenu.addEventListener("touchend", function () {
+    handleGesture();
+  });
 });

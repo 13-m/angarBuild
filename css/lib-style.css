@@ -88,6 +88,7 @@
   right: -250px;
   position: relative;
   flex-direction: column;
+  margin-bottom: 40px;
   width: 100%;
   text-align: center;
   border: 3px solid #e0b194;
@@ -182,9 +183,12 @@
 }
 
 .menu-up-btn {
-  width: 35px;
-  height: 35px;
-  background: url("../img/arrow-top-icon-1.svg") no-repeat center center / 14px,
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+  width: 40px;
+  height: 40px;
+  background: url("../img/arrow-top-icon-1.svg") no-repeat center center / 16px,
     #ffe5d6;
   cursor: pointer;
   transform: rotate(180deg);

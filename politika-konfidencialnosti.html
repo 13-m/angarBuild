@@ -18,7 +18,7 @@
     ></script>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="header__container">
         <ul class="header__top-list">
           <li class="header__top-item">
@@ -365,9 +365,9 @@
         </div>
       </div>
 
-      <aside class="side-menu menu-opened" id="sideMenu">
+      <aside class="side-menu" id="sideMenu">
         <button class="menu-close-btn" id="menuCloseBtn"></button>
-        <ul class="menu-list">
+        <ul class="menu-list menu-opened">
           <li class="menu-item">
             <div class="svg-wrapp"></div>
             <button class="menu-text aside-btn">Оставить заявку</button>
@@ -391,6 +391,7 @@
             <p class="menu-text">Написать в&nbsp;Telegram</p>
           </li>
         </ul>
+        <a href="#header" class="menu-up-btn"></a>
       </aside>
       <div id="modal" class="modal">
         <div class="modal-content">

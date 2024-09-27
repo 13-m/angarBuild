@@ -17,7 +17,7 @@
     ></script>
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="header__container">
         <ul class="header__top-list">
           <li class="header__top-item">
@@ -388,9 +388,9 @@
         </div>
       </div>
 
-      <aside class="side-menu menu-opened" id="sideMenu">
+      <aside class="side-menu" id="sideMenu">
         <button class="menu-close-btn" id="menuCloseBtn"></button>
-        <ul class="menu-list">
+        <ul class="menu-list menu-opened">
           <li class="menu-item">
             <div class="svg-wrapp"></div>
             <button class="menu-text aside-btn">Оставить заявку</button>
@@ -425,6 +425,7 @@
             >
           </li>
         </ul>
+        <a href="#header" class="menu-up-btn"></a>
       </aside>
       <div id="modal" class="modal">
         <div class="modal-content">
@@ -434,7 +435,7 @@
             Укажите ваш телефон и&nbsp;мы&nbsp;свяжемся с&nbsp;Вами
             в&nbsp;ближайшее время
           </p>
-          <form class="modal-form form" action="#" method="post">
+          <form class="modal-form form" action="!#" method="post">
             <label class="calc__label-form">
               <input
                 class="calc__input-form mask-phone"
@@ -446,7 +447,7 @@
             </label>
             <label class="calc__label-agree">
               <input class="agree" type="checkbox" name="agree" />
-              <span class="custom-checkbox"></span>
+              <span class="custom-checkbox tooltip-container"></span>
               <span class="calc__wrapp">
                 <span class="calc__agree">
                   Я&nbsp;соглашаюсь на&nbsp;обработку своих персональных данных
@@ -462,7 +463,7 @@
               </span>
             </label>
 
-            <button class="btn-blue modal-btn sendBtn">Оставить заявку</button>
+            <button class="btn-blue sendBtn">Оставить заявку</button>
           </form>
         </div>
       </div>
@@ -788,7 +789,7 @@
               </label>
               <label class="calc__label-agree">
                 <input class="agree" type="checkbox" name="agree" />
-                <span class="custom-checkbox"></span>
+                <span class="custom-checkbox tooltip-container"></span>
                 <span class="calc__wrapp">
                   <span class="calc__agree">
                     Я&nbsp;соглашаюсь на&nbsp;обработку своих персональных
@@ -1208,7 +1209,7 @@
               <ul class="work__wrapp active">
                 <li class="work__wrapp-left">
                   <h3 class="work__title geologica">
-                    Ангар из&nbsp;сэндвич панелей
+                    Полнокомплектное возведение здания
                   </h3>
                   <p class="work__desc-place">Пос. Федоровское</p>
                   <div class="work__inner">
@@ -1235,7 +1236,7 @@
                 </li>
                 <li class="work__wrapp-right">
                   <p class="work__span-desc">
-                    Этот ангар мы&nbsp;построили всего за&nbsp;4&nbsp;недели
+                    Можно записаться на&nbsp;просмотр
                   </p>
                   <div class="work__wrapp-btn">
                     <button class="work__btn-galery left"></button>
@@ -1246,7 +1247,7 @@
               <ul class="work__wrapp">
                 <li class="work__wrapp-left">
                   <h3 class="work__title geologica">
-                    Ангар из&nbsp;сэндвич панелей
+                    Готовый проект по&nbsp;типовому решению
                   </h3>
                   <p class="work__desc-place">СПб, ул. Бабушкина</p>
                   <div class="work__inner">
@@ -1273,7 +1274,7 @@
                 </li>
                 <li class="work__wrapp-right">
                   <p class="work__span-desc">
-                    Этот ангар мы&nbsp;построили всего за&nbsp;4&nbsp;недели
+                    Можно записаться на&nbsp;просмотр
                   </p>
                   <div class="work__wrapp-btn">
                     <button class="work__btn-galery left"></button>
@@ -1284,7 +1285,7 @@
               <ul class="work__wrapp">
                 <li class="work__wrapp-left">
                   <h3 class="work__title geologica">
-                    Ангар из&nbsp;сэндвич панелей
+                    Оперативная реализация проекта в&nbsp;в&nbsp;сжатые сроки
                   </h3>
                   <p class="work__desc-place">Пос. Федоровское</p>
                   <div class="work__inner">
@@ -1311,7 +1312,7 @@
                 </li>
                 <li class="work__wrapp-right">
                   <p class="work__span-desc">
-                    Этот ангар мы&nbsp;построили всего за&nbsp;4&nbsp;недели
+                    Можно записаться на&nbsp;просмотр
                   </p>
                   <div class="work__wrapp-btn">
                     <button class="work__btn-galery left"></button>
@@ -1322,7 +1323,7 @@
               <ul class="work__wrapp">
                 <li class="work__wrapp-left">
                   <h3 class="work__title geologica">
-                    Ангар из&nbsp;сэндвич панелей
+                    Утепленный ангар из&nbsp;СП
                   </h3>
                   <p class="work__desc-place">Пос. Новосаратовка</p>
                   <div class="work__inner">
@@ -1349,7 +1350,7 @@
                 </li>
                 <li class="work__wrapp-right">
                   <p class="work__span-desc">
-                    Этот ангар мы&nbsp;построили всего за&nbsp;4&nbsp;недели
+                    Можно записаться на&nbsp;просмотр
                   </p>
                   <div class="work__wrapp-btn">
                     <button class="work__btn-galery left"></button>
@@ -1433,7 +1434,7 @@
               </label>
               <label class="feedback__label-agree">
                 <input class="agree" type="checkbox" name="agree" />
-                <span class="custom-checkbox"></span>
+                <span class="custom-checkbox tooltip-container"></span>
                 <span class="feedback__wrapp">
                   <span class="feedback__agree">
                     Я&nbsp;соглашаюсь на&nbsp;обработку своих персональных
@@ -1731,7 +1732,7 @@
               </label>
               <label class="ask__label-agree">
                 <input class="agree" type="checkbox" name="agree" />
-                <span class="custom-checkbox"></span>
+                <span class="custom-checkbox tooltip-container"></span>
                 <span class="ask__wrapp">
                   <span class="ask__agree">
                     Я&nbsp;соглашаюсь на&nbsp;обработку своих персональных

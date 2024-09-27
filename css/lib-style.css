@@ -61,8 +61,9 @@
 /* aside */
 .side-menu {
   position: fixed;
-  right: -250px;
+  right: 0;
   top: 50%;
+  gap: 10px;
   transform: translateY(-50%);
   max-width: 100%;
   height: auto;
@@ -71,7 +72,6 @@
   justify-content: flex-start;
   align-items: center;
   z-index: 10000;
-  transition: right 0.3s ease;
 }
 .menu-close-btn {
   width: 35px;
@@ -79,18 +79,19 @@
   background: url("../img/close-icon.svg") no-repeat center center / 14px,
     #ffe5d6;
   cursor: pointer;
-  margin-bottom: 10px;
   transition: transform 0.2s ease;
   border: none;
   border-radius: 50%;
 }
 
 .menu-list {
+  right: -250px;
   position: relative;
   flex-direction: column;
   width: 100%;
   text-align: center;
   border: 3px solid #e0b194;
+  transition: right 0.3s ease;
 }
 
 .menu-item {
@@ -168,12 +169,27 @@
   border-bottom: 3px solid transparent;
 }
 
-.menu-opened.side-menu {
+.menu-opened.menu-list {
   right: 0;
 }
 
 .menu-close-btn:hover {
   transform: scale(1.1);
+}
+
+.menu-close-btn.rotate {
+  transform: rotate(45deg);
+}
+
+.menu-up-btn {
+  width: 35px;
+  height: 35px;
+  background: url("../img/arrow-top-icon-1.svg") no-repeat center center / 14px,
+    #ffe5d6;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+  border-radius: 50%;
 }
 
 /* modal  */

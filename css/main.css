@@ -9,6 +9,10 @@
   display: none !important;
 }
 
+.vk {
+  display: none !important;
+}
+
 .header__container {
   display: flex;
   flex-direction: column;
@@ -1189,7 +1193,8 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .work__span-desc {
-  max-width: 225px;
+  max-width: min-content;
+  text-align: end;
   margin-left: auto;
   padding: 23px 30px;
   color: #fff;

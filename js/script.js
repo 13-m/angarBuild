@@ -20,12 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Закрытие бокового меню
-  const sideMenu = document.getElementById("sideMenu");
+  // const sideMenu = document.getElementById("sideMenu");
+  const sideMenu = document.querySelector(".menu-list");
   const menuCloseBtn = document.getElementById("menuCloseBtn");
 
   if (sideMenu && menuCloseBtn) {
     menuCloseBtn.addEventListener("click", function () {
-      sideMenu.classList.remove("menu-opened");
+      sideMenu.classList.toggle("menu-opened");
+      menuCloseBtn.classList.toggle("rotate");
     });
   }
 
@@ -48,34 +50,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Модальные окна
   const modal = document.getElementById("modal");
-  const buttons = document.querySelectorAll(".modal-btn");
   const closeBtn = document.querySelector(".close-btn");
   const asideBtn = document.querySelector(".aside-btn");
+  const checkBox = modal.querySelector(".agree");
+  const formModal = modal.querySelector(".form");
+  const modalButtons = document.querySelectorAll(".modal-btn"); // кнопки открытия модального окна
 
-  if (modal && buttons.length && closeBtn && asideBtn) {
-    asideBtn.addEventListener("click", () => {
-      modal.classList.toggle("visible");
-      sideMenu.classList.remove("menu-opened");
-      document.body.classList.toggle("lock");
+  // Закрытие модального окна
+  function closeModal() {
+    modal.classList.remove("visible");
+    document.body.classList.remove("lock");
+  }
+
+  // Открытие модального окна
+  modalButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault(); // Предотвращаем стандартное действие
+      console.log("Открытие модального окна");
+      modal.classList.add("visible");
+      document.body.classList.add("lock");
     });
+  });
 
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        modal.classList.toggle("visible");
-        document.body.classList.toggle("lock");
-      });
-    });
+  // Обработка отправки формы
+  formModal.addEventListener("submit", (e) => {
+    e.preventDefault(); // Предотвращаем стандартную отправку формы
 
+    // Проверяем, установлен ли чекбокс
+    if (checkBox.checked) {
+      console.log("Чекбокс установлен, отправляем форму");
+      formModal.submit(); // Отправляем форму
+      closeModal(); // Закрываем модальное окно
+    } else {
+      console.log("Чекбокс не установлен");
+      // alert("Вы должны согласиться с условиями перед отправкой формы.");
+    }
+  });
+
+  // Закрытие модального окна по кнопке закрытия
+  if (closeBtn) {
     closeBtn.addEventListener("click", () => {
+      console.log("Закрытие модального окна");
+      closeModal();
+    });
+  }
+
+  // Закрытие модального окна при клике вне его
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      console.log("Клик по фону модального окна");
+      closeModal();
+    }
+  });
+
+  // Дополнительная кнопка для взаимодействия с aside (если она требуется)
+  if (asideBtn) {
+    asideBtn.addEventListener("click", () => {
+      console.log("1");
       modal.classList.toggle("visible");
       document.body.classList.toggle("lock");
-    });
-
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.toggle("visible");
-        document.body.classList.toggle("lock");
-      }
     });
   }
 
@@ -253,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
   forms.forEach((form) => {
     const checkbox = form.querySelector(".agree");
     const sendBtn = form.querySelector(".sendBtn");
-    const checkboxSpan = form.querySelector(".custom-checkbox");
+    const checkboxSpan = form.querySelector(".tooltip-container");
 
     form.addEventListener("submit", (e) => {
       if (!checkbox.checked) {
@@ -267,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           setTimeout(() => {
             tooltip.remove();
-          }, 30000);
+          }, 3000);
         }
       } else {
         console.log("Форма отправлена");

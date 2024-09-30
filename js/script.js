@@ -28,6 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
     menuCloseBtn.addEventListener("click", function () {
       sideMenu.classList.toggle("menu-opened");
       menuCloseBtn.classList.toggle("rotate");
+
+      if (!sideMenu.classList.contains("menu-opened")) {
+        setTimeout(() => {
+          sideMenu.style.display = "block";
+        }, 300);
+      }
+
+      if (sideMenu.classList.contains("menu-opened")) {
+        setTimeout(() => {
+          sideMenu.style.display = "block";
+        }, 300);
+      }
     });
   }
 

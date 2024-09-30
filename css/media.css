@@ -1019,11 +1019,12 @@
   }
 
   .menu-text {
-    display: none;
+    font-size: 0;
   }
 
   .menu-item {
     padding: 20px;
+    gap: 0;
   }
 
   /* header */

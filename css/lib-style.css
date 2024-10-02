@@ -303,6 +303,7 @@ textarea {
   display: flex;
   transition: transform 0.8s ease, opacity 0.8s ease;
   width: 100%;
+  min-height: 807px;
   position: absolute;
   left: 0;
   top: 0;
@@ -319,13 +320,13 @@ textarea {
 }
 
 .work__wrapp.previous-left {
-  opacity: 0;
+  opacity: 0.3;
   transform: translateX(-100%);
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .work__wrapp.previous-right {
-  opacity: 0;
+  opacity: 0.3;
   transform: translateX(100%);
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
@@ -515,5 +516,10 @@ textarea {
     background: url(../img/arrow-slider-r-icon.svg) no-repeat right 27px center /
         115px,
       #ffffff80;
+  }
+
+  .work__wrapp {
+    width: 100%;
+    opacity: 1;
   }
 }

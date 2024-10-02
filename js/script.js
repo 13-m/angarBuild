@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Слайдер
+  // Слайдер - отличный вариант
   const slides = document.querySelectorAll(".work__wrapp");
   const sliderContainer = document.querySelector(".slider");
   const nextButton = document.querySelector(".work__btn-slider.right");
@@ -132,40 +132,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (slides.length && sliderContainer && nextButton && prevButton) {
     let currentSlide = 0;
+    let startX = 0;
+    let endX = 0;
 
     function updateSliderHeight() {
       const activeSlide = slides[currentSlide];
       const slideHeight = activeSlide.offsetHeight;
-      sliderContainer.style.height = `${slideHeight + 1}px `;
+      sliderContainer.style.height = `${slideHeight + 1}px`;
     }
 
-    function showSlide(newSlideIndex, direction) {
-      slides[currentSlide].classList.remove("active");
+    function hideAllSlides() {
+      slides.forEach((slide) => {
+        slide.classList.remove(
+          "active",
+          "semi-transparent",
+          "previous-left",
+          "previous-right"
+        );
+        slide.style.display = "none";
+      });
+    }
 
-      if (direction === "next") {
-        slides[currentSlide].classList.add("previous-left");
-      } else if (direction === "prev") {
-        slides[currentSlide].classList.add("previous-right");
+    function showSlide(newSlideIndex) {
+      hideAllSlides();
+
+      // Set the current slide as active
+      slides[newSlideIndex].classList.add("active");
+      slides[newSlideIndex].style.display = "flex";
+
+      // Set the previous slide (if exists) as semi-transparent
+      if (newSlideIndex > 0) {
+        slides[newSlideIndex - 1].classList.add(
+          "semi-transparent",
+          "previous-left"
+        );
+        slides[newSlideIndex - 1].style.display = "flex";
+      }
+
+      // Set the next slide (if exists) as semi-transparent
+      if (newSlideIndex < slides.length - 1) {
+        slides[newSlideIndex + 1].classList.add(
+          "semi-transparent",
+          "previous-right"
+        );
+        slides[newSlideIndex + 1].style.display = "flex";
       }
 
       currentSlide = newSlideIndex;
-
-      slides[currentSlide].classList.remove("previous-left", "previous-right");
-      slides[currentSlide].classList.add("active");
-
+      updateButtonsState(); // Check button states after slide change
       updateSliderHeight();
     }
 
+    function updateButtonsState() {
+      // Disable the previous button if it's the first slide
+      if (currentSlide === 0) {
+        prevButton.classList.add("disabled");
+      } else {
+        prevButton.classList.remove("disabled");
+      }
+
+      // Disable the next button if it's the last slide
+      if (currentSlide === slides.length - 1) {
+        nextButton.classList.add("disabled");
+      } else {
+        nextButton.classList.remove("disabled");
+      }
+    }
+
     nextButton.addEventListener("click", () => {
-      const newSlideIndex = (currentSlide + 1) % slides.length;
-      showSlide(newSlideIndex, "next");
+      if (currentSlide < slides.length - 1) {
+        const newSlideIndex = currentSlide + 1;
+        showSlide(newSlideIndex);
+      }
     });
 
     prevButton.addEventListener("click", () => {
-      const newSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(newSlideIndex, "prev");
+      if (currentSlide > 0) {
+        const newSlideIndex = currentSlide - 1;
+        showSlide(newSlideIndex);
+      }
     });
 
+    // Add swipe functionality to each slide in .work__wrapp
+    slides.forEach((slide, index) => {
+      slide.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX; // Store the initial touch position
+      });
+
+      slide.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX; // Track the movement of the touch
+      });
+
+      slide.addEventListener("touchend", () => {
+        const diffX = startX - endX;
+
+        // Check the swipe direction and threshold
+        if (diffX > 50 && currentSlide < slides.length - 1) {
+          // Swipe left (next slide)
+          nextButton.click();
+        } else if (diffX < -50 && currentSlide > 0) {
+          // Swipe right (previous slide)
+          prevButton.click();
+        }
+      });
+    });
+
+    // Initial setup
     showSlide(currentSlide);
     updateSliderHeight();
   }

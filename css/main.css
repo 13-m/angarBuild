@@ -5,11 +5,20 @@
 @import url("./normalize.css");
 @import url("./lib-style.css");
 
+.wrapp-fixed {
+  display: none !important;
+}
+
+aside.side-menu {
+  display: none;
+}
+
 .work__wrapp-btn {
   display: none !important;
 }
 
-.vk {
+.vk,
+.viber {
   display: none !important;
 }
 
@@ -2231,6 +2240,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .footer__social-list {
+  justify-content: center;
 }
 
 .social__list {

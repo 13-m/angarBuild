@@ -5,10 +5,25 @@
   display: none;
 }
 
-@media (max-height: 700px) {
+@media (max-height: 830px) {
   .menu-item {
     gap: 6px;
     padding: 14px 6px;
+  }
+}
+
+@media (max-height: 700px) {
+  .side-menu {
+    top: 40%;
+  }
+}
+
+@media (max-height: 580px) {
+  .menu-text {
+    font-size: 0;
+  }
+  .menu-item {
+    padding: 25px 14px;
   }
 }
 
@@ -349,6 +364,7 @@
   }
 
   .work__wrapp-left {
+    flex: 1;
     padding: 30px 30px 40px;
     min-width: 100%;
   }

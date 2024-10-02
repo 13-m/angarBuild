@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!sideMenu.classList.contains("menu-opened")) {
         setTimeout(() => {
-          sideMenu.style.display = "block";
+          sideMenu.style.display = "flex";
         }, 300);
       }
 
       if (sideMenu.classList.contains("menu-opened")) {
         setTimeout(() => {
-          sideMenu.style.display = "block";
+          sideMenu.style.display = "flex";
         }, 300);
       }
     });

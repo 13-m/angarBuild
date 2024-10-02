@@ -86,7 +86,7 @@
 
 .menu-list {
   height: 0;
-  right: -250px;
+  right: -200%;
   position: relative;
   flex-direction: column;
   width: 100%;
@@ -570,6 +570,22 @@ textarea {
 
   .tooltip::after {
     left: 5px;
+  }
+}
+
+@media (max-width: 520px) {
+  .side-menu {
+    top: auto;
+    bottom: 0;
+    transform: translateY(-50%);
+  }
+
+  .menu-list {
+    flex-direction: row;
+  }
+
+  .menu-item:not(:last-child) {
+    border: none;
   }
 }
 

@@ -6,13 +6,14 @@
 @import url("./lib-style.css");
 
 .wrapp-fixed {
-  display: none !important;
+  /* display: none !important; */
 }
 
 aside.side-menu {
-  display: none;
+  /* display: none; */
 }
 
+/* внутренний слайдер внутри слайдера работ */
 .work__wrapp-btn {
   display: none !important;
 }

@@ -15,6 +15,7 @@
 @media (max-height: 700px) {
   .side-menu {
     top: 40%;
+    bottom: auto;
   }
 }
 
@@ -800,7 +801,7 @@
   }
 
   .header__container {
-    padding: 15px;
+    padding: 15px 20px;
   }
 
   .header-logo--mobile {
@@ -1043,6 +1044,25 @@
 }
 
 @media (max-width: 520px) {
+  .side-menu {
+    top: auto;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, -35%);
+  }
+
+  .menu-list {
+    border: 1px solid #e0b194;
+  }
+
+  .menu-item:nth-child(n + 3) {
+    display: none;
+  }
+
+  .menu-item:nth-child(1) {
+    border-right: 1px solid #e0b194;
+  }
+
   /* тест */
 
   .container {
@@ -1067,8 +1087,12 @@
   }
 
   .menu-item {
-    padding: 20px;
+    padding: 15px 30px;
     gap: 0;
+  }
+
+  .menu-item:nth-child(1) .svg-wrapp {
+    background: url("../img/phone-icon.svg") no-repeat center center / contain;
   }
 
   /* header */
@@ -1115,6 +1139,10 @@
   .view__text {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  .view__desc {
+    margin-bottom: 12px;
   }
 
   .view__link::after {

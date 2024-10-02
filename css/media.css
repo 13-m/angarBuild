@@ -241,6 +241,14 @@
     margin: 0 30px;
   }
 
+  .about__item:not(.about__item#work) {
+    margin: 0 30px;
+  }
+
+  .about__container-list.container {
+    margin: 0;
+  }
+
   .nav__list {
     gap: 30px;
     display: flex;
@@ -1035,6 +1043,10 @@
     margin: 0 10px;
   }
 
+  .about__item:not(.about__item#work) {
+    margin: 0 10px;
+  }
+
   .view__container {
     margin: 0;
   }
@@ -1102,9 +1114,17 @@
   .calc__item:first-child .calc__wrapp-item:first-child {
     flex-direction: row;
   }
+  .about__title {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
   .about__item#work {
-    margin: 0 24px;
+    margin: 0;
+  }
+
+  .work__wrapp-left {
+    padding: 30px 20px 40px;
   }
 
   .feedback {

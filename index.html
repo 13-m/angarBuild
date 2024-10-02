@@ -58,6 +58,11 @@
         /></div
     ></noscript>
     <!-- /Yandex.Metrika counter -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header id="header">
@@ -1250,161 +1255,174 @@
             <h2 class="about__title geologica">
               Строительство Ангаров. Примеры&nbsp;работ:
             </h2>
-            <div class="slider">
-              <ul class="work__wrapp active">
-                <li class="work__wrapp-left">
-                  <h3 class="work__title geologica">
-                    Полнокомплектное возведение здания
-                  </h3>
-                  <p class="work__desc-place">Пос. Федоровское</p>
-                  <div class="work__inner">
-                    <p class="work__inner-text">
-                      Время установки:
-                      <span class="num">6</span>
-                      <span class="days">недель</span>
-                    </p>
-                  </div>
-                  <p class="work__text">Параметры:</p>
-                  <ul class="work__list">
-                    <li class="work__item">
-                      <p class="work__item-text">Ширина*Длина*Высота:</p>
-                      <p class="work__item-desc">24,0&times;60,0&times;6,0</p>
+            <!-- <div class="slider"> -->
+            <div class="swiper">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <ul class="work__wrapp swiper-slide step active">
+                    <li class="work__wrapp-left">
+                      <h3 class="work__title geologica">
+                        Полнокомплектное возведение здания
+                      </h3>
+                      <p class="work__desc-place">Пос. Федоровское</p>
+                      <div class="work__inner">
+                        <p class="work__inner-text">
+                          Время установки:
+                          <span class="num">6</span>
+                          <span class="days">недель</span>
+                        </p>
+                      </div>
+                      <p class="work__text">Параметры:</p>
+                      <ul class="work__list">
+                        <li class="work__item">
+                          <p class="work__item-text">Ширина*Длина*Высота:</p>
+                          <p class="work__item-desc">
+                            24,0&times;60,0&times;6,0
+                          </p>
+                        </li>
+                        <li class="work__item">
+                          <p class="work__item-text">Тип кровли:</p>
+                          <p class="work__item-desc">Двускатная</p>
+                        </li>
+                      </ul>
+                      <button class="work__btn btn-blue modal-btn">
+                        Получить консультацию
+                      </button>
                     </li>
-                    <li class="work__item">
-                      <p class="work__item-text">Тип кровли:</p>
-                      <p class="work__item-desc">Двускатная</p>
-                    </li>
-                  </ul>
-                  <button class="work__btn btn-blue modal-btn">
-                    Получить консультацию
-                  </button>
-                </li>
-                <li class="work__wrapp-right">
-                  <p class="work__span-desc">
-                    Можно записаться на&nbsp;просмотр
-                  </p>
-                  <div class="work__wrapp-btn">
-                    <button class="work__btn-galery left"></button>
-                    <button class="work__btn-galery right"></button>
-                  </div>
-                </li>
-              </ul>
-              <ul class="work__wrapp">
-                <li class="work__wrapp-left">
-                  <h3 class="work__title geologica">
-                    Готовый проект по&nbsp;типовому решению
-                  </h3>
-                  <p class="work__desc-place">СПб, ул. Бабушкина</p>
-                  <div class="work__inner">
-                    <p class="work__inner-text">
-                      Время установки:
-                      <span class="num">7</span>
-                      <span class="days">недель</span>
-                    </p>
-                  </div>
-                  <p class="work__text">Параметры:</p>
-                  <ul class="work__list">
-                    <li class="work__item">
-                      <p class="work__item-text">Ширина*Длина*Высота:</p>
-                      <p class="work__item-desc">20,0&times;84,0&times;7,8</p>
-                    </li>
-                    <li class="work__item">
-                      <p class="work__item-text">Тип кровли:</p>
-                      <p class="work__item-desc">Плоская</p>
+                    <li class="work__wrapp-right">
+                      <p class="work__span-desc">
+                        Можно записаться на&nbsp;просмотр
+                      </p>
+                      <div class="work__wrapp-btn">
+                        <button class="work__btn-galery left"></button>
+                        <button class="work__btn-galery right"></button>
+                      </div>
                     </li>
                   </ul>
-                  <button class="work__btn btn-blue modal-btn">
-                    Получить консультацию
-                  </button>
-                </li>
-                <li class="work__wrapp-right">
-                  <p class="work__span-desc">
-                    Можно записаться на&nbsp;просмотр
-                  </p>
-                  <div class="work__wrapp-btn">
-                    <button class="work__btn-galery left"></button>
-                    <button class="work__btn-galery right"></button>
-                  </div>
-                </li>
-              </ul>
-              <ul class="work__wrapp">
-                <li class="work__wrapp-left">
-                  <h3 class="work__title geologica">
-                    Оперативная реализация проекта в&nbsp;в&nbsp;сжатые сроки
-                  </h3>
-                  <p class="work__desc-place">Пос. Федоровское</p>
-                  <div class="work__inner">
-                    <p class="work__inner-text">
-                      Время установки:
-                      <span class="num">6</span>
-                      <span class="days">недель</span>
-                    </p>
-                  </div>
-                  <p class="work__text">Параметры:</p>
-                  <ul class="work__list">
-                    <li class="work__item">
-                      <p class="work__item-text">Ширина*Длина*Высота:</p>
-                      <p class="work__item-desc">24,0&times;64,0&times;9,0</p>
+                  <ul class="work__wrapp swiper-slide step">
+                    <li class="work__wrapp-left">
+                      <h3 class="work__title geologica">
+                        Готовый проект по&nbsp;типовому решению
+                      </h3>
+                      <p class="work__desc-place">СПб, ул. Бабушкина</p>
+                      <div class="work__inner">
+                        <p class="work__inner-text">
+                          Время установки:
+                          <span class="num">7</span>
+                          <span class="days">недель</span>
+                        </p>
+                      </div>
+                      <p class="work__text">Параметры:</p>
+                      <ul class="work__list">
+                        <li class="work__item">
+                          <p class="work__item-text">Ширина*Длина*Высота:</p>
+                          <p class="work__item-desc">
+                            20,0&times;84,0&times;7,8
+                          </p>
+                        </li>
+                        <li class="work__item">
+                          <p class="work__item-text">Тип кровли:</p>
+                          <p class="work__item-desc">Плоская</p>
+                        </li>
+                      </ul>
+                      <button class="work__btn btn-blue modal-btn">
+                        Получить консультацию
+                      </button>
                     </li>
-                    <li class="work__item">
-                      <p class="work__item-text">Тип кровли:</p>
-                      <p class="work__item-desc">Двускатная</p>
-                    </li>
-                  </ul>
-                  <button class="work__btn btn-blue modal-btn">
-                    Получить консультацию
-                  </button>
-                </li>
-                <li class="work__wrapp-right">
-                  <p class="work__span-desc">
-                    Можно записаться на&nbsp;просмотр
-                  </p>
-                  <div class="work__wrapp-btn">
-                    <button class="work__btn-galery left"></button>
-                    <button class="work__btn-galery right"></button>
-                  </div>
-                </li>
-              </ul>
-              <ul class="work__wrapp">
-                <li class="work__wrapp-left">
-                  <h3 class="work__title geologica">
-                    Утепленный ангар из&nbsp;СП
-                  </h3>
-                  <p class="work__desc-place">Пос. Новосаратовка</p>
-                  <div class="work__inner">
-                    <p class="work__inner-text">
-                      Время установки:
-                      <span class="num">8</span>
-                      <span class="days">недель</span>
-                    </p>
-                  </div>
-                  <p class="work__text">Параметры:</p>
-                  <ul class="work__list">
-                    <li class="work__item">
-                      <p class="work__item-text">Ширина*Длина*Высота:</p>
-                      <p class="work__item-desc">24,0&times;100,0&times;12,0</p>
-                    </li>
-                    <li class="work__item">
-                      <p class="work__item-text">Тип кровли:</p>
-                      <p class="work__item-desc">Двухскатная</p>
+                    <li class="work__wrapp-right">
+                      <p class="work__span-desc">
+                        Можно записаться на&nbsp;просмотр
+                      </p>
+                      <div class="work__wrapp-btn">
+                        <button class="work__btn-galery left"></button>
+                        <button class="work__btn-galery right"></button>
+                      </div>
                     </li>
                   </ul>
-                  <button class="work__btn btn-blue modal-btn">
-                    Получить консультацию
-                  </button>
-                </li>
-                <li class="work__wrapp-right">
-                  <p class="work__span-desc">
-                    Можно записаться на&nbsp;просмотр
-                  </p>
-                  <div class="work__wrapp-btn">
-                    <button class="work__btn-galery left"></button>
-                    <button class="work__btn-galery right"></button>
-                  </div>
-                </li>
-              </ul>
-              <button class="work__btn-slider left"></button>
-              <button class="work__btn-slider right"></button>
+                  <ul class="work__wrapp swiper-slide step">
+                    <li class="work__wrapp-left">
+                      <h3 class="work__title geologica">
+                        Оперативная реализация проекта в&nbsp;в&nbsp;сжатые
+                        сроки
+                      </h3>
+                      <p class="work__desc-place">Пос. Федоровское</p>
+                      <div class="work__inner">
+                        <p class="work__inner-text">
+                          Время установки:
+                          <span class="num">6</span>
+                          <span class="days">недель</span>
+                        </p>
+                      </div>
+                      <p class="work__text">Параметры:</p>
+                      <ul class="work__list">
+                        <li class="work__item">
+                          <p class="work__item-text">Ширина*Длина*Высота:</p>
+                          <p class="work__item-desc">
+                            24,0&times;64,0&times;9,0
+                          </p>
+                        </li>
+                        <li class="work__item">
+                          <p class="work__item-text">Тип кровли:</p>
+                          <p class="work__item-desc">Двускатная</p>
+                        </li>
+                      </ul>
+                      <button class="work__btn btn-blue modal-btn">
+                        Получить консультацию
+                      </button>
+                    </li>
+                    <li class="work__wrapp-right">
+                      <p class="work__span-desc">
+                        Можно записаться на&nbsp;просмотр
+                      </p>
+                      <div class="work__wrapp-btn">
+                        <button class="work__btn-galery left"></button>
+                        <button class="work__btn-galery right"></button>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="work__wrapp swiper-slide step">
+                    <li class="work__wrapp-left">
+                      <h3 class="work__title geologica">
+                        Утепленный ангар из&nbsp;СП
+                      </h3>
+                      <p class="work__desc-place">Пос. Новосаратовка</p>
+                      <div class="work__inner">
+                        <p class="work__inner-text">
+                          Время установки:
+                          <span class="num">8</span>
+                          <span class="days">недель</span>
+                        </p>
+                      </div>
+                      <p class="work__text">Параметры:</p>
+                      <ul class="work__list">
+                        <li class="work__item">
+                          <p class="work__item-text">Ширина*Длина*Высота:</p>
+                          <p class="work__item-desc">
+                            24,0&times;100,0&times;12,0
+                          </p>
+                        </li>
+                        <li class="work__item">
+                          <p class="work__item-text">Тип кровли:</p>
+                          <p class="work__item-desc">Двухскатная</p>
+                        </li>
+                      </ul>
+                      <button class="work__btn btn-blue modal-btn">
+                        Получить консультацию
+                      </button>
+                    </li>
+                    <li class="work__wrapp-right">
+                      <p class="work__span-desc">
+                        Можно записаться на&nbsp;просмотр
+                      </p>
+                      <div class="work__wrapp-btn">
+                        <button class="work__btn-galery left"></button>
+                        <button class="work__btn-galery right"></button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="swiper-pagination steps-pagination"></div>
             </div>
           </li>
         </ul>
@@ -2047,6 +2065,7 @@
     </footer>
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+
     <script type="text/javascript">
       ymaps.ready(function () {
         var myMap = new ymaps.Map(

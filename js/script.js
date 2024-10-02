@@ -125,17 +125,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Слайдер - отличный вариант
+  /* 
   const slides = document.querySelectorAll(".work__wrapp");
   const sliderContainer = document.querySelector(".slider");
-  const nextButton = document.querySelector(".work__btn-slider.right");
-  const prevButton = document.querySelector(".work__btn-slider.left");
+  const sliderButtons = document.querySelectorAll(".work__inner-btn");
 
-  if (slides.length && sliderContainer && nextButton && prevButton) {
+  let startX = 0; // Координата начала касания
+  let isSwiping = false; // Флаг, что происходит свайп
+
+  if (slides.length && sliderContainer && sliderButtons.length) {
     let currentSlide = 0;
-    let startX = 0;
-    let startY = 0;
-    let endX = 0;
-    let endY = 0;
 
     function updateSliderHeight() {
       const activeSlide = slides[currentSlide];
@@ -158,11 +157,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function showSlide(newSlideIndex) {
       hideAllSlides();
 
-      // Set the current slide as active
+      // Активируем текущий слайд
       slides[newSlideIndex].classList.add("active");
       slides[newSlideIndex].style.display = "flex";
 
-      // Set the previous slide (if exists) as semi-transparent
+      // Обновляем активную кнопку
+      sliderButtons.forEach((btn, index) => {
+        if (index === newSlideIndex) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+
+      // Предыдущий слайд, если он есть
       if (newSlideIndex > 0) {
         slides[newSlideIndex - 1].classList.add(
           "semi-transparent",
@@ -171,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slides[newSlideIndex - 1].style.display = "flex";
       }
 
-      // Set the next slide (if exists) as semi-transparent
+      // Следующий слайд, если он есть
       if (newSlideIndex < slides.length - 1) {
         slides[newSlideIndex + 1].classList.add(
           "semi-transparent",
@@ -181,78 +189,59 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       currentSlide = newSlideIndex;
-      updateButtonsState(); // Check button states after slide change
       updateSliderHeight();
     }
 
-    function updateButtonsState() {
-      // Disable the previous button if it's the first slide
-      if (currentSlide === 0) {
-        prevButton.classList.add("disabled");
-      } else {
-        prevButton.classList.remove("disabled");
+    // Обработчики событий свайпа
+    function handleTouchStart(event) {
+      startX = event.touches[0].clientX; // Начало касания
+      isSwiping = true;
+    }
+
+    function handleTouchMove(event) {
+      if (!isSwiping) return;
+      const moveX = event.touches[0].clientX;
+
+      // Если свайп вправо
+      if (startX - moveX > 50) {
+        if (currentSlide < slides.length - 1) {
+          showSlide(currentSlide + 1);
+        }
+        isSwiping = false;
       }
 
-      // Disable the next button if it's the last slide
-      if (currentSlide === slides.length - 1) {
-        nextButton.classList.add("disabled");
-      } else {
-        nextButton.classList.remove("disabled");
+      // Если свайп влево
+      if (moveX - startX > 50) {
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+        isSwiping = false;
       }
     }
 
-    nextButton.addEventListener("click", () => {
-      if (currentSlide < slides.length - 1) {
-        const newSlideIndex = currentSlide + 1;
-        showSlide(newSlideIndex);
-      }
-    });
+    function handleTouchEnd() {
+      isSwiping = false;
+    }
 
-    prevButton.addEventListener("click", () => {
-      if (currentSlide > 0) {
-        const newSlideIndex = currentSlide - 1;
-        showSlide(newSlideIndex);
-      }
-    });
-
-    // Add swipe functionality to each slide in .work__wrapp
+    // Добавляем обработчики на контейнер work__wrapp для свайпа
     slides.forEach((slide) => {
-      slide.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX; // Store the initial horizontal touch position
-        startY = e.touches[0].clientY; // Store the initial vertical touch position
-      });
+      slide.addEventListener("touchstart", handleTouchStart);
+      slide.addEventListener("touchmove", handleTouchMove);
+      slide.addEventListener("touchend", handleTouchEnd);
+    });
 
-      slide.addEventListener("touchmove", (e) => {
-        endX = e.touches[0].clientX;
-        endY = e.touches[0].clientY;
-
-        const diffX = startX - endX;
-        const diffY = startY - endY;
-
-        // Check if the swipe is more horizontal than vertical
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-          e.preventDefault(); // Prevent vertical scroll
-        }
-      });
-
-      slide.addEventListener("touchend", () => {
-        const diffX = startX - endX;
-
-        // Check the swipe direction and threshold
-        if (diffX > 50 && currentSlide < slides.length - 1) {
-          // Swipe left (next slide)
-          nextButton.click();
-        } else if (diffX < -50 && currentSlide > 0) {
-          // Swipe right (previous slide)
-          prevButton.click();
-        }
+    // Добавляем клик-события к кнопкам
+    sliderButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = parseInt(btn.getAttribute("data-slide"), 10);
+        showSlide(slideIndex);
       });
     });
 
-    // Initial setup
+    // Начальная настройка
     showSlide(currentSlide);
     updateSliderHeight();
-  }
+  } */
 
   // Картинки в слайдере
   const imagesForSliders = [
@@ -396,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           setTimeout(() => {
             tooltip.remove();
-          }, 3000);
+          }, 30000);
         }
       } else {
         console.log("Форма отправлена");
@@ -430,4 +419,54 @@ document.addEventListener("DOMContentLoaded", function () {
   sideMenu.addEventListener("touchend", function () {
     handleGesture();
   });
+});
+
+//  swiper
+var stepsSwiper = new Swiper(".swiper-container", {
+  slidesPerView: 4,
+  spaceBetween: 10,
+  // loop: true,
+  grabCursor: false,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      grabCursor: true,
+      // spaceBetween: 25,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    },
+    768: {
+      slidesPerView: 1,
+      grabCursor: true,
+      // spaceBetween: 25,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    },
+    980: {
+      slidesPerView: 1,
+      grabCursor: true,
+      // spaceBetween: 25,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    },
+    1200: {
+      slidesPerView: 1,
+      grabCursor: true,
+      // spaceBetween: 25,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
+    },
+    1400: {
+      slidesPerView: 1,
+    },
+  },
 });

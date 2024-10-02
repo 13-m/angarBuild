@@ -841,6 +841,7 @@
     height: 55px;
     align-items: center;
     gap: 5px;
+    flex-shrink: 0;
     z-index: 1000;
   }
 

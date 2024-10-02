@@ -836,7 +836,7 @@
     flex-direction: column;
     justify-content: center;
     border: none;
-    background-color: #ffe5d6;
+    background-color: #ffe5d6;1
     width: 55px;
     height: 55px;
     align-items: center;
@@ -1060,7 +1060,7 @@
   }
 
   .view__body--mobile {
-    padding: 0 20px 300px;
+    padding: 0 20px 330px;
     background: url("../img/main-img-mobile.jpg") no-repeat center bottom / 100%;
   }
 

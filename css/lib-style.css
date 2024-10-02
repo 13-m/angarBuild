@@ -303,7 +303,7 @@ textarea {
   display: flex;
   transition: transform 0.3s ease, opacity 0.3s ease;
   width: 100%;
-  min-height: 920px;
+  /* min-height: 920px; */
   position: absolute;
   left: 0;
   top: 0;
@@ -576,7 +576,8 @@ textarea {
 /* swipper */
 
 .swiper-horizontal {
-  padding: 0 40px;
+  padding: 0 30px;
+  display: flex;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -592,6 +593,7 @@ textarea {
 
 .swiper-wrapper {
   align-items: stretch;
+  height: auto !important;
 }
 .steps-container {
   display: block;

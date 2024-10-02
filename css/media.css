@@ -345,6 +345,10 @@
     flex-direction: column;
   }
 
+  .about__title {
+    margin-left: 30px;
+  }
+
   .work__wrapp {
     flex-direction: column-reverse;
   }
@@ -917,6 +921,8 @@
   .service__title {
     font-size: 40px;
     line-height: 40px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
   .service__desc {
@@ -1047,6 +1053,11 @@
     margin: 0 10px;
   }
 
+  .about__item:not(.about__item#work) .about__title {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
   .view__container {
     margin: 0;
   }
@@ -1114,9 +1125,10 @@
   .calc__item:first-child .calc__wrapp-item:first-child {
     flex-direction: row;
   }
+
   .about__title {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .about__item#work {
@@ -1130,6 +1142,10 @@
   .feedback {
     background: #fff;
     margin-bottom: 54px;
+  }
+
+  .feedback__left {
+    padding: 50px 30px;
   }
 
   .feedback__container {
@@ -1162,6 +1178,7 @@
   }
 
   .benefit__title {
+    margin-left: 20px;
     margin-bottom: 35px;
     font-size: 45px;
     line-height: 45px;
@@ -1229,6 +1246,8 @@
   }
 
   .report__title {
+    margin-left: 20px;
+    margin-right: 20px;
     font-size: 45px;
     line-height: 45px;
   }
@@ -1260,7 +1279,8 @@
   }
 
   .start__title {
-    padding-left: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
     font-size: 45px;
     line-height: 45px;
   }

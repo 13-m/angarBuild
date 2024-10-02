@@ -802,7 +802,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   margin-bottom: 16px;
   font-size: 75px;
   font-weight: 300;
-  line-height: 60px;
+  line-height: 68px;
   color: #1f1f1d;
 }
 

@@ -406,6 +406,10 @@
     margin-bottom: 26px;
   }
 
+  .work__btn {
+    margin-top: auto;
+  }
+
   .feedback__left,
   .feedback__right {
     z-index: 1;
@@ -1096,6 +1100,10 @@
   .calc__item:nth-child(1) .calc__wrapp-list,
   .calc__item:first-child .calc__wrapp-item:first-child {
     flex-direction: row;
+  }
+
+  .about__item#work {
+    margin: 0 24px;
   }
 
   .feedback {

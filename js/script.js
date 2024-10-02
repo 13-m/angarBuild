@@ -133,7 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (slides.length && sliderContainer && nextButton && prevButton) {
     let currentSlide = 0;
     let startX = 0;
+    let startY = 0;
     let endX = 0;
+    let endY = 0;
 
     function updateSliderHeight() {
       const activeSlide = slides[currentSlide];
@@ -214,13 +216,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add swipe functionality to each slide in .work__wrapp
-    slides.forEach((slide, index) => {
+    slides.forEach((slide) => {
       slide.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX; // Store the initial touch position
+        startX = e.touches[0].clientX; // Store the initial horizontal touch position
+        startY = e.touches[0].clientY; // Store the initial vertical touch position
       });
 
       slide.addEventListener("touchmove", (e) => {
-        endX = e.touches[0].clientX; // Track the movement of the touch
+        endX = e.touches[0].clientX;
+        endY = e.touches[0].clientY;
+
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+
+        // Check if the swipe is more horizontal than vertical
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          e.preventDefault(); // Prevent vertical scroll
+        }
       });
 
       slide.addEventListener("touchend", () => {

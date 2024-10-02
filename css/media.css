@@ -5,6 +5,9 @@
   display: none;
 }
 
+.menu-item.phone {
+  display: none;
+}
 @media (max-height: 830px) {
   .menu-item {
     gap: 6px;
@@ -630,6 +633,7 @@
 
   .about {
     padding-top: 60px;
+    margin-bottom: 60px;
   }
 
   .about__title {
@@ -1063,6 +1067,18 @@
     border-right: 1px solid #e0b194;
   }
 
+  .menu-item.phone {
+    display: block;
+  }
+
+  .menu-item-phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
   /* тест */
 
   .container {
@@ -1071,6 +1087,10 @@
 
   .about__item:not(.about__item#work) {
     margin: 0 10px;
+  }
+
+  .service__wrapp-second {
+    margin-bottom: 20px;
   }
 
   .about__item:not(.about__item#work) .about__title {
@@ -1107,7 +1127,7 @@
   }
 
   .view__body--mobile {
-    padding: 0 20px 330px;
+    padding: 20px 20px 330px;
     background: url("../img/main-img-mobile.jpg") no-repeat center bottom / 100%;
   }
 
@@ -1258,6 +1278,10 @@
 
   .benefit__text {
     font-size: 15px;
+  }
+
+  .question__title {
+    margin-left: 20px;
   }
 
   .report {
@@ -1418,6 +1442,10 @@
     background: url("../img/tg-icon.svg") no-repeat center center / 22px,
       #45a5e9e6;
   }
+  .footer__social-list {
+    justify-content: center;
+  }
+
   .social__item:nth-child(2) {
     background: url("../img/wa-icon.svg") no-repeat center center / 22px,
       #49ac27e6;

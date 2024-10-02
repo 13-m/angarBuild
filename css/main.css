@@ -2241,7 +2241,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .footer__social-list {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .social__list {

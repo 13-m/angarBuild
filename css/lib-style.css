@@ -185,7 +185,7 @@
 
 .wrapp-fixed {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   position: fixed;
   gap: 10px;
@@ -202,8 +202,15 @@
     #ffe5d6;
   cursor: pointer;
   transform: rotate(180deg);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
   border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-up-btn.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* modal  */

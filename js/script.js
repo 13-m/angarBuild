@@ -470,3 +470,16 @@ var stepsSwiper = new Swiper(".swiper-container", {
     },
   },
 });
+
+// Получаем кнопку
+const menuUpBtn = document.querySelector(".menu-up-btn");
+
+function handleScroll() {
+  if (window.scrollY >= 900) {
+    menuUpBtn.classList.add("show");
+  } else {
+    menuUpBtn.classList.remove("show");
+  }
+}
+
+window.addEventListener("scroll", handleScroll);

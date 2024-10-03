@@ -2225,6 +2225,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 }
 
 .footer__link-phone {
+  margin-bottom: 5px;
   font-size: 22px;
   line-height: 27px;
   font-weight: 600;

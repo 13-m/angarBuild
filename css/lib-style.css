@@ -115,16 +115,16 @@
   border-bottom: 3px solid transparent;
 }
 
-.menu-item:nth-child(-n + 3) {
+.menu-item:nth-child(-n + 4) {
   background: linear-gradient(180deg, #372e29 0%, transparent 100%);
   background-color: #785745;
 }
 
-.menu-item:nth-child(4) {
+.menu-item:nth-child(5) {
   background-color: #2ab200;
 }
 
-.menu-item:nth-child(5) {
+.menu-item:nth-child(6) {
   background-color: #11aadc;
 }
 .svg-wrapp {
@@ -133,19 +133,19 @@
   aspect-ratio: 1;
 }
 
-.menu-item:nth-child(1) .svg-wrapp {
+.menu-item:nth-child(2) .svg-wrapp {
   background: url("../img/menu-icon-1.svg") no-repeat center center / contain;
 }
-.menu-item:nth-child(2) .svg-wrapp {
+.menu-item:nth-child(3) .svg-wrapp {
   background: url("../img/menu-icon-2.svg") no-repeat center center / contain;
 }
-.menu-item:nth-child(3) .svg-wrapp {
+.menu-item:nth-child(4) .svg-wrapp {
   background: url("../img/menu-icon-3.svg") no-repeat center center / contain;
 }
-.menu-item:nth-child(4) .svg-wrapp {
+.menu-item:nth-child(5) .svg-wrapp {
   background: url("../img/wa-icon.svg") no-repeat center center / contain;
 }
-.menu-item:nth-child(5) .svg-wrapp {
+.menu-item:nth-child(6) .svg-wrapp {
   background: url("../img/tg-icon.svg") no-repeat center center / contain;
 }
 
@@ -519,6 +519,7 @@ textarea {
 @media (min-width: 1260px) {
   .step {
     flex-direction: row !important;
+    padding: 0px 20px 0px;
   }
 
   .work__wrapp {
@@ -528,6 +529,9 @@ textarea {
 @media (max-width: 1260px) {
   .plus {
     right: 0;
+  }
+  .swiper-horizontal {
+    padding: 0 30px;
   }
 }
 
@@ -599,7 +603,6 @@ textarea {
 /* swipper */
 
 .swiper-horizontal {
-  padding: 0 30px;
   display: flex;
 }
 

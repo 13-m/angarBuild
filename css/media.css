@@ -843,7 +843,7 @@
     background-color: #fff;
     color: #1f1f1d;
     transition: left 0.3s ease-in-out;
-    z-index: 100;
+    z-index: 1000;
   }
 
   .nav.active {
@@ -854,14 +854,16 @@
     display: flex;
     gap: 40px;
     flex-direction: column;
-    padding: 110px 45px 20px;
+    padding: 110px 45px 50px;
   }
 
   .header-wrapp--mobile {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 1001;
   }
 
   .header--mobile {

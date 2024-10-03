@@ -339,9 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Находим все блоки contact__photo
   const contactPhotos = document.querySelectorAll(".contact__photo");
 
-  // Проходим по каждому блоку
   contactPhotos.forEach((photoBlock, i) => {
-    // У каждого блока свой список изображений
     const images = imagesForContactPhotos[i];
     let currentIndex = 0; // Индекс изображения для каждого блока начинается с 0
 
@@ -362,6 +360,35 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
       updateBackground(photoBlock, images, currentIndex);
     });
+
+    // Свайп
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    photoBlock.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].screenX;
+    });
+
+    photoBlock.addEventListener("touchend", (event) => {
+      touchEndX = event.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    const handleSwipe = () => {
+      if (touchStartX - touchEndX > 50) {
+        // Свайп влево
+        currentIndex =
+          currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+        updateBackground(photoBlock, images, currentIndex);
+      }
+
+      if (touchEndX - touchStartX > 50) {
+        // Свайп вправо
+        currentIndex =
+          currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+        updateBackground(photoBlock, images, currentIndex);
+      }
+    };
   });
 
   // forms
@@ -422,63 +449,51 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //  swiper
-var stepsSwiper = new Swiper(".swiper-container", {
-  slidesPerView: 4,
+var stepsSwiper1 = new Swiper(".swiper-container", {
   spaceBetween: 10,
   // loop: true,
   grabCursor: false,
-
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      grabCursor: true,
-      // spaceBetween: 25,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-      },
-    },
-    768: {
-      slidesPerView: 1,
-      grabCursor: true,
-      // spaceBetween: 25,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-      },
-    },
-    980: {
-      slidesPerView: 1,
-      grabCursor: true,
-      // spaceBetween: 25,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-      },
-    },
-    1200: {
-      slidesPerView: 1,
-      grabCursor: true,
-      // spaceBetween: 25,
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-      },
-      navigation: {
-        nextEl: "disable",
-        prevEl: "disable",
-      },
-    },
-    1400: {
-      slidesPerView: 1,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  slidesPerView: 1,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
   },
 });
+
+// var stepsSwiper2 = new Swiper(".cont-swiper-container-1", {
+//   spaceBetween: 10,
+//   // loop: true,
+//   grabCursor: false,
+//   navigation: {
+//     nextEl: ".slider-1-button-next",
+//     prevEl: ".slider-1-button-prev",
+//   },
+//   slidesPerView: 1,
+//   pagination: {
+//     el: ".slider-1-pagination",
+//     type: "bullets",
+//   },
+// });
+
+// var stepsSwiper3 = new Swiper(".cont-swiper-container-2", {
+//   spaceBetween: 10,
+//   // loop: true,
+//   grabCursor: false,
+//   navigation: {
+//     nextEl: ".slider-2-button-next",
+//     prevEl: ".slider-2-button-prev",
+//   },
+//   slidesPerView: 1,
+//   pagination: {
+//     el: ".slider-2-pagination",
+//     type: "bullets",
+//   },
+// });
 
 // Получаем кнопку
 const menuUpBtn = document.querySelector(".menu-up-btn");

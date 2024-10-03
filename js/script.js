@@ -427,6 +427,7 @@ var stepsSwiper = new Swiper(".swiper-container", {
   spaceBetween: 10,
   // loop: true,
   grabCursor: false,
+
   breakpoints: {
     // when window width is >= 320px
     320: {
@@ -464,9 +465,17 @@ var stepsSwiper = new Swiper(".swiper-container", {
         el: ".swiper-pagination",
         type: "bullets",
       },
+      navigation: {
+        nextEl: "disable",
+        prevEl: "disable",
+      },
     },
     1400: {
       slidesPerView: 1,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     },
   },
 });

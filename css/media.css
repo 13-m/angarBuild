@@ -835,12 +835,14 @@
   }
   /* burger */
   .nav {
-    overflow: auto;
     position: fixed;
+    overflow: auto;
     top: 0;
     left: -100%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     color: #1f1f1d;
     transition: left 0.3s ease-in-out;
@@ -853,9 +855,11 @@
 
   .nav__list {
     display: flex;
-    gap: 40px;
+    flex: 1;
+    justify-content: space-between;
+    gap: unset;
     flex-direction: column;
-    padding: 110px 45px 50px;
+    padding: 100px 45px 40px;
   }
 
   .header-wrapp--mobile {
@@ -956,7 +960,7 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    padding: 60px 0 40px;
+    padding: 40px 0;
     background-color: #f2f8fb;
   }
 

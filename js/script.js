@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Бургер-меню
   const burger = document.querySelector(".burger");
   const burgerMenu = document.getElementById("burgerMenu");
+  const isOpen = burger.classList.contains("active");
 
   if (burger && burgerMenu) {
     burger.addEventListener("click", () => {

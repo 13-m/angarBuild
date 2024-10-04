@@ -363,6 +363,26 @@ document.addEventListener("DOMContentLoaded", function () {
       updateBackground(photoBlock, images, currentIndex);
     });
 
+    function disableScroll() {
+      document.body.style.overflow = "hidden";
+    }
+
+    // Function to enable scroll on the body
+    function enableScroll() {
+      document.body.style.overflow = "";
+    }
+
+    // Apply event listeners only if the screen width is less than 520px
+    if (window.innerWidth < 520) {
+      contactPhotos.forEach((photoBlock) => {
+        // Disable scroll on touchstart (when user touches the slider)
+        photoBlock.addEventListener("touchstart", disableScroll);
+
+        // Enable scroll on touchend (when user stops touching the slider)
+        photoBlock.addEventListener("touchend", enableScroll);
+      });
+    }
+    // end slider
     // Свайп
     let touchStartX = 0;
     let touchEndX = 0;

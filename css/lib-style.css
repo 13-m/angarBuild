@@ -747,4 +747,8 @@ textarea {
   .menu-item:not(:last-child) {
     border: none;
   }
+
+  .modal-content {
+    padding: 70px 34px;
+  }
 }

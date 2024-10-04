@@ -2090,6 +2090,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   padding: 24px 26px;
   transition: background 0.3s ease;
   scroll-snap-type: y mandatory;
+  touch-action: none;
 }
 
 .contact__photo::after {

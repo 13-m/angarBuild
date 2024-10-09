@@ -1343,6 +1343,26 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   color: #ffffff80;
 }
 
+.choices .choices__list.choices__list--dropdown .choices__placeholder {
+  display: none;
+}
+
+.is-open .choices__list--dropdown,
+.is-open .choices__list[aria-expanded] {
+  border-radius: 0px 0px 8px 8px;
+  background: linear-gradient(180deg, #372e29 0%, transparent 100%);
+  background-color: #785745;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-top: 1px solid #fff;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  color: #fff;
+}
+
 .feedback-right__select {
   padding: 16px 0;
   margin-bottom: 24px;

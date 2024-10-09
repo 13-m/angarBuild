@@ -472,6 +472,14 @@ document.addEventListener("DOMContentLoaded", function () {
   sideMenu.addEventListener("touchend", function () {
     handleGesture();
   });
+
+  const elements = document.getElementById("select-social-js");
+  const choices = new Choices(elements, {
+    searchEnabled: false,
+    itemSelectText: "",
+    placeholder: true,
+    placeholderValue: null,
+  });
 });
 
 //  swiper

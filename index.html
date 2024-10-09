@@ -8,6 +8,10 @@
     />
     <meta name="robots" content="noindex" />
     <link rel="shortcut icon" href="./img/logo-icon.svg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
     <title>АнгарСтрой</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
@@ -1463,7 +1467,13 @@
                 экскурсии
               </h3>
 
-              <div class="select_wrap">
+              <select name="social" id="select-social-js">
+                <option value="">Связаться через ...</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="telegram">Telegram</option>
+                <option value="viber">Viber</option>
+              </select>
+              <!-- <div class="select_wrap">
                 <ul class="default_option">
                   <li>
                     <div class="option">
@@ -1488,7 +1498,7 @@
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> -->
               <label class="feedback-right__label">
                 <input
                   class="feedback-right__input mask-phone"
@@ -2075,7 +2085,7 @@
     </footer>
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script type="text/javascript">
       ymaps.ready(function () {
         var myMap = new ymaps.Map(

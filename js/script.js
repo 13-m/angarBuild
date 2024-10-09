@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("load", () => {
-    document.body.classList.add("load");
-  });
-
   // Аккордеон
   document.querySelectorAll(".question__item-acc").forEach((item) => {
     item.addEventListener("click", function () {

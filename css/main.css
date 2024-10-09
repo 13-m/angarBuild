@@ -1347,6 +1347,10 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
   display: none;
 }
 
+.choices[data-type*="select-one"]::after {
+  border-color: #fff transparent transparent;
+}
+
 .is-open .choices__list--dropdown,
 .is-open .choices__list[aria-expanded] {
   border-radius: 0px 0px 8px 8px;

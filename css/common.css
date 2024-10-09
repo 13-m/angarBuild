@@ -10,6 +10,12 @@ html {
 body {
   color: #1f1f1d;
   font-family: "Inter", Arial, Helvetica, sans-serif;
+  transition: opacity 2s ease-in-out;
+  opacity: 0;
+}
+
+.load {
+  opacity: 1;
 }
 
 h1,
@@ -104,29 +110,6 @@ body.lock {
 .btn-blue:hover {
   background-color: #0b72d1;
 }
-
-/* 
-'Inter', 
-  regular,+
-  semiBold
-  Medium
-  Bold
-  Black
-  THin
-  Ligth
-
-'Geologica', 
-  Ligth
-  SemiBold
-  Medium
-  Bold
-  Regular
-
-'CoFo Sans'
-  Bold
-  Medium
-  Regular
-*/
 
 @media (max-width: 520px) {
   .btn-blue {

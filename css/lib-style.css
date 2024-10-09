@@ -165,6 +165,7 @@
 }
 
 .menu-item:hover {
+  z-index: 1;
   transform: scale(1.2);
   background: #372e29;
   border-bottom: 3px solid transparent;
